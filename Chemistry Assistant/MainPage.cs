@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FirebirdSql.Data.FirebirdClient;
+using System;
 using System.Windows.Forms;
 
 namespace Chemistry_Assistant
@@ -11,6 +12,7 @@ namespace Chemistry_Assistant
             InitializeComponent();
             PSE pse = new PSE();
             AddUserControll(pse);
+            ConnectToDatabank();
 
         }
 
@@ -32,6 +34,40 @@ namespace Chemistry_Assistant
 
 
         }
+        public static Datamodule DM;
+
+        public void ConnectToDatabank()
+        {
+                try
+                {
+                    DM = new Datamodule("SYSDBA",
+                                   "Diyar1010",
+                                   "F:\\TEST.FDB",
+                                   "localhost",
+                                   3050
+                                   );
+
+                }
+                catch(Exception ex)
+                {
+
+                    MessageBox.Show("Datenbank kann nicht geöffnet werden allllloooo verpiss dich " + ex.Message);
+
+                }
+                string ServerConnector = DM.GetServerVersion();
+                string Database = DM.GetDatabaseName();
+                string Servername = DM.GetDatasourceName();
+
+
+             
+
+
+                this.label1.Text = ServerConnector + " / " + Servername + " / " + Database;
+
+
+
+        }
+
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -47,6 +83,11 @@ namespace Chemistry_Assistant
             Rechner rechner = new Rechner();
             //methode addusercontrill wird wieder gerufen
             AddUserControll(rechner);
+        }
+
+        private void TSL_Status_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
