@@ -58,21 +58,13 @@ namespace Chemistry_Assistant
 
         private void FinalizeInstance()
         {
-            try
-            {
-
-
+            /*
                 FbConnection.ClearPool(fbConnection);
-
-
-
-
-            }catch(Exception e)
+            */
+            if (fbConnection.State == ConnectionState.Open)
             {
-                Console.WriteLine(e);
+                FbConnection.ClearPool(fbConnection);
             }
-            
-
         }
 
         // Allgemeine Konstanten
