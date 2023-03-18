@@ -43,7 +43,7 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.TB_Deutschername = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
@@ -208,12 +208,13 @@
             this.label14.TabIndex = 14;
             this.label14.Text = "Elektronegativität nach Pearson(eV)";
             // 
-            // textBox1
+            // TB_Deutschername
             // 
-            this.textBox1.Location = new System.Drawing.Point(19, 101);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(448, 20);
-            this.textBox1.TabIndex = 15;
+            this.TB_Deutschername.Location = new System.Drawing.Point(19, 101);
+            this.TB_Deutschername.Name = "TB_Deutschername";
+            this.TB_Deutschername.ReadOnly = true;
+            this.TB_Deutschername.Size = new System.Drawing.Size(448, 20);
+            this.TB_Deutschername.TabIndex = 15;
             // 
             // textBox2
             // 
@@ -316,7 +317,7 @@
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.TB_Deutschername);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label12);
@@ -334,6 +335,7 @@
             this.Controls.Add(this.Ordunungszahl);
             this.Name = "Eigenschaften";
             this.Text = "Eigenschaften";
+            this.Load += new System.EventHandler(this.Eigenschaften_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -356,7 +358,7 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox TB_Deutschername;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox4;

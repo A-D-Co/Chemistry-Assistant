@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 using System.ComponentModel;
+using System.Data.Common;
 
 namespace Chemistry_Assistant
 {
@@ -52,7 +53,7 @@ namespace Chemistry_Assistant
         }
         public void Dispose()
         {
-            //FinalizeInstance();
+            FinalizeInstance();
             GC.SuppressFinalize(this);
         }
 
@@ -61,10 +62,19 @@ namespace Chemistry_Assistant
             /*
                 FbConnection.ClearPool(fbConnection);
             */
-            if (fbConnection.State == ConnectionState.Open)
+            try
             {
-                FbConnection.ClearPool(fbConnection);
+                if (fbConnection.State == ConnectionState.Open)
+                {
+                    FbConnection.ClearPool(fbConnection);
+                }
+
             }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+            
         }
 
         // Allgemeine Konstanten
@@ -331,6 +341,16 @@ namespace Chemistry_Assistant
                 fbConnection.Close();
             }
         }
+        public void Select()
+        {
+
+        }
+
+
+
+
+
+
 
         protected string[] BuildSchemaQueryRestrictions(string table_catalog, string table_schema, string table_name, string table_type)
         {

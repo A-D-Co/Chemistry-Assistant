@@ -42,7 +42,7 @@ namespace Chemistry_Assistant
                 {
                     DM = new Datamodule("SYSDBA",
                                    "Diyar1010",
-                                   "F:\\TEST.FDB",
+                                   "F:\\Chemistry Assistant\\Chemistry Assistant\\DB\\Elementen.FDB",
                                    "localhost",
                                    3050
                                    );
@@ -62,7 +62,7 @@ namespace Chemistry_Assistant
              
 
 
-                this.label1.Text = ServerConnector + " / " + Servername + " / " + Database;
+                this.TSS_Status.Text = ServerConnector + " / " + Servername + " / " + Database;
 
 
 
@@ -86,6 +86,11 @@ namespace Chemistry_Assistant
         }
 
         private void TSL_Status_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void statusStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
 
         }

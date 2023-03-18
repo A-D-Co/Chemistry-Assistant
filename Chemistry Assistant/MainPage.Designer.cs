@@ -33,8 +33,8 @@
             this.button1 = new System.Windows.Forms.Button();
             this.MainPanel = new System.Windows.Forms.Panel();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.TSL_Status = new System.Windows.Forms.ToolStripStatusLabel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.statusStrip2 = new System.Windows.Forms.StatusStrip();
+            this.TSS_Status = new System.Windows.Forms.ToolStripStatusLabel();
             this.panel1.SuspendLayout();
             this.MainPanel.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -73,45 +73,44 @@
             // 
             // MainPanel
             // 
-            this.MainPanel.Controls.Add(this.statusStrip1);
-            this.MainPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.MainPanel.Location = new System.Drawing.Point(0, 101);
+            this.MainPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.MainPanel.Controls.Add(this.statusStrip2);
+            this.MainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MainPanel.Location = new System.Drawing.Point(0, 53);
             this.MainPanel.Name = "MainPanel";
-            this.MainPanel.Size = new System.Drawing.Size(985, 447);
+            this.MainPanel.Size = new System.Drawing.Size(985, 495);
             this.MainPanel.TabIndex = 1;
             // 
             // statusStrip1
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.TSL_Status});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 425);
+            this.TSS_Status});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 526);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(985, 22);
-            this.statusStrip1.TabIndex = 0;
+            this.statusStrip1.TabIndex = 2;
             this.statusStrip1.Text = "statusStrip1";
             // 
-            // TSL_Status
+            // statusStrip2
             // 
-            this.TSL_Status.Name = "TSL_Status";
-            this.TSL_Status.Size = new System.Drawing.Size(118, 17);
-            this.TSL_Status.Text = "toolStripStatusLabel1";
-            this.TSL_Status.Click += new System.EventHandler(this.TSL_Status_Click);
+            this.statusStrip2.Location = new System.Drawing.Point(0, 473);
+            this.statusStrip2.Name = "statusStrip2";
+            this.statusStrip2.Size = new System.Drawing.Size(985, 22);
+            this.statusStrip2.TabIndex = 0;
+            this.statusStrip2.Text = "statusStrip2";
             // 
-            // label1
+            // TSS_Status
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(69, 71);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "label1";
+            this.TSS_Status.Name = "TSS_Status";
+            this.TSS_Status.Size = new System.Drawing.Size(118, 17);
+            this.TSS_Status.Text = "toolStripStatusLabel1";
             // 
             // MainPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(985, 548);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.MainPanel);
             this.Controls.Add(this.panel1);
             this.Name = "MainPage";
@@ -132,9 +131,9 @@
         private System.Windows.Forms.Panel MainPanel;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.StatusStrip statusStrip2;
         private System.Windows.Forms.StatusStrip statusStrip1;
-        private System.Windows.Forms.ToolStripStatusLabel TSL_Status;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ToolStripStatusLabel TSS_Status;
     }
 }
 
