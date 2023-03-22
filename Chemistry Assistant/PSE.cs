@@ -25,9 +25,13 @@ namespace Chemistry_Assistant
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-
+            // wenn neue eigenschaften page erstellt wird wird direkt das elementen id gegeben um darauf der element in daten bank zu weißen
             Eigenschaften eigenschaften = new Eigenschaften(2);
+
+            //der code offnet den eigenschaften page
             eigenschaften.Show(this);
+
+            //änder der name von page nach der element name
             eigenschaften.setEigenschaft("Hdid");
 
         }

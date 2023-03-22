@@ -37,20 +37,25 @@ namespace Chemistry_Assistant
             this.Text = Element;
         }
 
-
         private void Eigenschaften_Load(object sender, EventArgs e)
         {
 
+
+            //Auf dataset refrenciert die im datamoul um table herzustellen
             data = MainPage.DM.ds;
 
-            MainPage.DM.LoadData2Table("SELECT * FROM Eigenschaften where id ="+elementId, "ElementTable");
+            //das loaddata2 aufrufne damit er auf datenbank zu greift und und selcet command ausfüht 
+            MainPage.DM.LoadData2Table("SELECT * FROM Eigenschaften where id ="+ elementId , "ElementTable");
+
+
+
 
             TB_Deutschername.Text = data.Tables[0].Rows[0][1].ToString();
 
 
 
-
         }
+
     }
 
 }

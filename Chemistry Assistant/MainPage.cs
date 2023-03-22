@@ -58,12 +58,7 @@ namespace Chemistry_Assistant
                 string Database = DM.GetDatabaseName();
                 string Servername = DM.GetDatasourceName();
 
-
-             
-
-
                 this.TSS_Status.Text = ServerConnector + " / " + Servername + " / " + Database;
-
 
 
         }

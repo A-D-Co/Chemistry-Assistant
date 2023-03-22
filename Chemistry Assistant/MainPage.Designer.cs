@@ -28,28 +28,28 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.SwitchPanel = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.MainPanel = new System.Windows.Forms.Panel();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.statusStrip2 = new System.Windows.Forms.StatusStrip();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.TSS_Status = new System.Windows.Forms.ToolStripStatusLabel();
-            this.panel1.SuspendLayout();
+            this.SwitchPanel.SuspendLayout();
             this.MainPanel.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel1
+            // SwitchPanel
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(985, 53);
-            this.panel1.TabIndex = 0;
+            this.SwitchPanel.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.SwitchPanel.Controls.Add(this.button2);
+            this.SwitchPanel.Controls.Add(this.button1);
+            this.SwitchPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.SwitchPanel.Location = new System.Drawing.Point(0, 0);
+            this.SwitchPanel.Name = "SwitchPanel";
+            this.SwitchPanel.Size = new System.Drawing.Size(985, 53);
+            this.SwitchPanel.TabIndex = 0;
             // 
             // button2
             // 
@@ -81,6 +81,14 @@
             this.MainPanel.Size = new System.Drawing.Size(985, 495);
             this.MainPanel.TabIndex = 1;
             // 
+            // statusStrip2
+            // 
+            this.statusStrip2.Location = new System.Drawing.Point(0, 473);
+            this.statusStrip2.Name = "statusStrip2";
+            this.statusStrip2.Size = new System.Drawing.Size(985, 22);
+            this.statusStrip2.TabIndex = 0;
+            this.statusStrip2.Text = "statusStrip2";
+            // 
             // statusStrip1
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -90,14 +98,6 @@
             this.statusStrip1.Size = new System.Drawing.Size(985, 22);
             this.statusStrip1.TabIndex = 2;
             this.statusStrip1.Text = "statusStrip1";
-            // 
-            // statusStrip2
-            // 
-            this.statusStrip2.Location = new System.Drawing.Point(0, 473);
-            this.statusStrip2.Name = "statusStrip2";
-            this.statusStrip2.Size = new System.Drawing.Size(985, 22);
-            this.statusStrip2.TabIndex = 0;
-            this.statusStrip2.Text = "statusStrip2";
             // 
             // TSS_Status
             // 
@@ -112,10 +112,10 @@
             this.ClientSize = new System.Drawing.Size(985, 548);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.MainPanel);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.SwitchPanel);
             this.Name = "MainPage";
             this.Text = "MainPage";
-            this.panel1.ResumeLayout(false);
+            this.SwitchPanel.ResumeLayout(false);
             this.MainPanel.ResumeLayout(false);
             this.MainPanel.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
@@ -127,7 +127,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel SwitchPanel;
         private System.Windows.Forms.Panel MainPanel;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
