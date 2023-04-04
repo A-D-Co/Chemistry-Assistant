@@ -44,17 +44,17 @@
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.TB_Deutschername = new System.Windows.Forms.TextBox();
-            this.textBox13 = new System.Windows.Forms.TextBox();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.TB_Pearson = new System.Windows.Forms.TextBox();
+            this.TB_Allred = new System.Windows.Forms.TextBox();
+            this.TB_Pauling = new System.Windows.Forms.TextBox();
+            this.TB_Kovalenzradius = new System.Windows.Forms.TextBox();
+            this.TB_Atomradius = new System.Windows.Forms.TextBox();
+            this.TB_Dichte = new System.Windows.Forms.TextBox();
+            this.TB_Siedepunkt = new System.Windows.Forms.TextBox();
+            this.TB_Schmeltzpunkt = new System.Windows.Forms.TextBox();
+            this.TB_Oxidationsstufen = new System.Windows.Forms.TextBox();
+            this.TB_Relative_Atommasse = new System.Windows.Forms.TextBox();
+            this.TB_Elektronenkonfiguration = new System.Windows.Forms.TextBox();
             this.TB_Englischername = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
@@ -217,82 +217,82 @@
             this.TB_Deutschername.Size = new System.Drawing.Size(448, 27);
             this.TB_Deutschername.TabIndex = 15;
             // 
-            // textBox13
+            // TB_Pearson
             // 
-            this.textBox13.Location = new System.Drawing.Point(19, 367);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(448, 20);
-            this.textBox13.TabIndex = 27;
+            this.TB_Pearson.Location = new System.Drawing.Point(19, 367);
+            this.TB_Pearson.Name = "TB_Pearson";
+            this.TB_Pearson.Size = new System.Drawing.Size(448, 20);
+            this.TB_Pearson.TabIndex = 27;
             // 
-            // textBox12
+            // TB_Allred
             // 
-            this.textBox12.Location = new System.Drawing.Point(19, 345);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(448, 20);
-            this.textBox12.TabIndex = 26;
+            this.TB_Allred.Location = new System.Drawing.Point(19, 345);
+            this.TB_Allred.Name = "TB_Allred";
+            this.TB_Allred.Size = new System.Drawing.Size(448, 20);
+            this.TB_Allred.TabIndex = 26;
             // 
-            // textBox11
+            // TB_Pauling
             // 
-            this.textBox11.Location = new System.Drawing.Point(19, 323);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(448, 20);
-            this.textBox11.TabIndex = 25;
+            this.TB_Pauling.Location = new System.Drawing.Point(19, 323);
+            this.TB_Pauling.Name = "TB_Pauling";
+            this.TB_Pauling.Size = new System.Drawing.Size(448, 20);
+            this.TB_Pauling.TabIndex = 25;
             // 
-            // textBox10
+            // TB_Kovalenzradius
             // 
-            this.textBox10.Location = new System.Drawing.Point(19, 301);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(448, 20);
-            this.textBox10.TabIndex = 24;
+            this.TB_Kovalenzradius.Location = new System.Drawing.Point(19, 301);
+            this.TB_Kovalenzradius.Name = "TB_Kovalenzradius";
+            this.TB_Kovalenzradius.Size = new System.Drawing.Size(448, 20);
+            this.TB_Kovalenzradius.TabIndex = 24;
             // 
-            // textBox9
+            // TB_Atomradius
             // 
-            this.textBox9.Location = new System.Drawing.Point(19, 279);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(448, 20);
-            this.textBox9.TabIndex = 23;
+            this.TB_Atomradius.Location = new System.Drawing.Point(19, 279);
+            this.TB_Atomradius.Name = "TB_Atomradius";
+            this.TB_Atomradius.Size = new System.Drawing.Size(448, 20);
+            this.TB_Atomradius.TabIndex = 23;
             // 
-            // textBox8
+            // TB_Dichte
             // 
-            this.textBox8.Location = new System.Drawing.Point(19, 257);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(448, 20);
-            this.textBox8.TabIndex = 22;
+            this.TB_Dichte.Location = new System.Drawing.Point(19, 257);
+            this.TB_Dichte.Name = "TB_Dichte";
+            this.TB_Dichte.Size = new System.Drawing.Size(448, 20);
+            this.TB_Dichte.TabIndex = 22;
             // 
-            // textBox7
+            // TB_Siedepunkt
             // 
-            this.textBox7.Location = new System.Drawing.Point(19, 235);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(448, 20);
-            this.textBox7.TabIndex = 21;
+            this.TB_Siedepunkt.Location = new System.Drawing.Point(19, 235);
+            this.TB_Siedepunkt.Name = "TB_Siedepunkt";
+            this.TB_Siedepunkt.Size = new System.Drawing.Size(448, 20);
+            this.TB_Siedepunkt.TabIndex = 21;
             // 
-            // textBox6
+            // TB_Schmeltzpunkt
             // 
-            this.textBox6.Location = new System.Drawing.Point(19, 213);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(448, 20);
-            this.textBox6.TabIndex = 20;
+            this.TB_Schmeltzpunkt.Location = new System.Drawing.Point(19, 213);
+            this.TB_Schmeltzpunkt.Name = "TB_Schmeltzpunkt";
+            this.TB_Schmeltzpunkt.Size = new System.Drawing.Size(448, 20);
+            this.TB_Schmeltzpunkt.TabIndex = 20;
             // 
-            // textBox5
+            // TB_Oxidationsstufen
             // 
-            this.textBox5.Location = new System.Drawing.Point(19, 191);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(448, 20);
-            this.textBox5.TabIndex = 19;
+            this.TB_Oxidationsstufen.Location = new System.Drawing.Point(19, 191);
+            this.TB_Oxidationsstufen.Name = "TB_Oxidationsstufen";
+            this.TB_Oxidationsstufen.Size = new System.Drawing.Size(448, 20);
+            this.TB_Oxidationsstufen.TabIndex = 19;
             // 
-            // textBox4
+            // TB_Relative_Atommasse
             // 
-            this.textBox4.Location = new System.Drawing.Point(19, 169);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(448, 20);
-            this.textBox4.TabIndex = 18;
+            this.TB_Relative_Atommasse.Location = new System.Drawing.Point(19, 169);
+            this.TB_Relative_Atommasse.Name = "TB_Relative_Atommasse";
+            this.TB_Relative_Atommasse.Size = new System.Drawing.Size(448, 20);
+            this.TB_Relative_Atommasse.TabIndex = 18;
             // 
-            // textBox3
+            // TB_Elektronenkonfiguration
             // 
-            this.textBox3.Location = new System.Drawing.Point(19, 145);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(448, 20);
-            this.textBox3.TabIndex = 17;
+            this.TB_Elektronenkonfiguration.Location = new System.Drawing.Point(19, 145);
+            this.TB_Elektronenkonfiguration.Name = "TB_Elektronenkonfiguration";
+            this.TB_Elektronenkonfiguration.Size = new System.Drawing.Size(448, 20);
+            this.TB_Elektronenkonfiguration.TabIndex = 17;
             // 
             // TB_Englischername
             // 
@@ -307,17 +307,17 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(825, 456);
-            this.Controls.Add(this.textBox13);
-            this.Controls.Add(this.textBox12);
-            this.Controls.Add(this.textBox11);
-            this.Controls.Add(this.textBox10);
-            this.Controls.Add(this.textBox9);
-            this.Controls.Add(this.textBox8);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.TB_Pearson);
+            this.Controls.Add(this.TB_Allred);
+            this.Controls.Add(this.TB_Pauling);
+            this.Controls.Add(this.TB_Kovalenzradius);
+            this.Controls.Add(this.TB_Atomradius);
+            this.Controls.Add(this.TB_Dichte);
+            this.Controls.Add(this.TB_Siedepunkt);
+            this.Controls.Add(this.TB_Schmeltzpunkt);
+            this.Controls.Add(this.TB_Oxidationsstufen);
+            this.Controls.Add(this.TB_Relative_Atommasse);
+            this.Controls.Add(this.TB_Elektronenkonfiguration);
             this.Controls.Add(this.TB_Englischername);
             this.Controls.Add(this.TB_Deutschername);
             this.Controls.Add(this.label14);
@@ -336,8 +336,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Ordunungszahl);
             this.Name = "Eigenschaften";
-            this.Text = "Eigenschaften";
-            this.Load += new System.EventHandler(this.Eigenschaften_Load);
+            this.Text = "^^0";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -361,17 +360,17 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox TB_Deutschername;
-        private System.Windows.Forms.TextBox textBox13;
-        private System.Windows.Forms.TextBox textBox12;
-        private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox TB_Pearson;
+        private System.Windows.Forms.TextBox TB_Allred;
+        private System.Windows.Forms.TextBox TB_Pauling;
+        private System.Windows.Forms.TextBox TB_Kovalenzradius;
+        private System.Windows.Forms.TextBox TB_Atomradius;
+        private System.Windows.Forms.TextBox TB_Dichte;
+        private System.Windows.Forms.TextBox TB_Siedepunkt;
+        private System.Windows.Forms.TextBox TB_Schmeltzpunkt;
+        private System.Windows.Forms.TextBox TB_Oxidationsstufen;
+        private System.Windows.Forms.TextBox TB_Relative_Atommasse;
+        private System.Windows.Forms.TextBox TB_Elektronenkonfiguration;
         private System.Windows.Forms.TextBox TB_Englischername;
     }
 }

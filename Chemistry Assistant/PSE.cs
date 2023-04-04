@@ -21,49 +21,42 @@ namespace Chemistry_Assistant
             InitializeComponent();
         }
 
+        public DataSet data = new DataSet();
 
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            // wenn neue eigenschaften page erstellt wird wird direkt das elementen id gegeben um darauf der element in daten bank zu weißen
-            Eigenschaften eigenschaften = new Eigenschaften(2);
-
-            //der code offnet den eigenschaften page
-            eigenschaften.Show(this);
-
-            //änder der name von page nach der element name
-            eigenschaften.setEigenschaft("Hdid");
-
+            EigenschaftenWindow(2,"Helium");
         }
-
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            Eigenschaften eigenschaften = new Eigenschaften(1);
-            eigenschaften.Show(this);
-            eigenschaften.setEigenschaft("Helium");
+            EigenschaftenWindow(1,"WasserStoff");
         }
 
-        public DataSet data = new DataSet();
+
+
+
+        private void EigenschaftenWindow(int id, string elementname)
+        {
+            // wenn neue eigenschaften page erstellt wird wird direkt das elementen id gegeben um darauf der element in daten bank zu weißen
+            Eigenschaften eigenschaften = new Eigenschaften(id, elementname);
+            //der code offnet den eigenschaften page
+            eigenschaften.Show(this);
+        }
+
+
+
+        #region Temp
 
         public void SimpelSql()
         {
-            string elemnt = TB_SQL.Text;
+            
             data = MainPage.DM.ds;
 
-            //MainPage.DM.ExecuteSimpleDML("INSERT INTO Elemente (Element ) VALUES ('"+elemnt+"');");
-
-
-            //Console.WriteLine(MainPage.DM.TableExists("Elemente", false)); 
-
-            MainPage.DM.LoadData2Table("SELECT * FROM Eigenschaften where id = 1", "ElementTable");
+            MainPage.DM.LoadData2Table("SELECT * FROM Eigenschaften", "ElementTable");
 
             dataGridView1.DataSource = MainPage.DM.ds.Tables[0];
-
-            label2.Text = data.Tables[0].Rows[0][2].ToString();
-
-
-
-
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -71,6 +64,6 @@ namespace Chemistry_Assistant
             SimpelSql();
         }
 
-
+        #endregion
     }
 }

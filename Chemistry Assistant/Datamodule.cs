@@ -11,6 +11,7 @@ using System.Threading;
 using System.Windows.Forms;
 using System.ComponentModel;
 using System.Data.Common;
+using System.Drawing;
 
 namespace Chemistry_Assistant
 {
@@ -408,32 +409,24 @@ namespace Chemistry_Assistant
                 }
             }
         }
-        public void LoadData2Table(ref FbCommand listcmd, string tablename)
+
+        public void importImageToTabel(string SqlString)
         {
-            listcmd.Connection = fbConnection;
+            fbConnection.Open();
+            byte[] imageData = File.ReadAllBytes("F:\\Chemistry Assistant\\Chemistry Assistant\\Resources\\helium.jpg");
 
-            using (FbDataAdapter daplist = new FbDataAdapter())
+            using (FbCommand cmd = new FbCommand(SqlString, fbConnection))
             {
-                ResetTable(ref ds, tablename);
-
-                daplist.SelectCommand = listcmd;
-                if (fbConnection.State == ConnectionState.Closed)
-                {
-                    fbConnection.Open();
-                }
-                try
-                {
-                    daplist.SelectCommand.Prepare();
-                    listcmd.Transaction = fbConnection.BeginTransaction();
-                    daplist.Fill(ds, tablename);
-                    listcmd.Transaction.Commit();
-                }
-                finally
-                {
-                    fbConnection.Close();
-                }
+                cmd.Parameters.AddWithValue("1", 1);
+                cmd.Parameters.AddWithValue("helium.jpg", imageData);
+                cmd.ExecuteNonQuery();
             }
+
+            fbConnection.Close();
+
         }
+
+      
         public void ResetTable(ref DataSet ds, string tableName)
         {
             int tableIndex = ds.Tables.IndexOf(tableName);

@@ -12,11 +12,17 @@ namespace Chemistry_Assistant
             InitializeComponent();
             PSE pse = new PSE();
             AddUserControll(pse);
+            //wird zum daten bank verbunden und alle daten wird selected
             ConnectToDatabank();
 
         }
 
-        public static string dm_;
+
+
+
+
+
+        public static Datamodule DM;
 
         // quelle https://www.youtube.com/watch?v=ILGUQBFjZUk
         public void AddUserControll(UserControl userControll)
@@ -34,7 +40,7 @@ namespace Chemistry_Assistant
 
 
         }
-        public static Datamodule DM;
+        
 
         public void ConnectToDatabank()
         {
@@ -61,6 +67,13 @@ namespace Chemistry_Assistant
                 this.TSS_Status.Text = ServerConnector + " / " + Servername + " / " + Database;
 
 
+
+            //das loaddata2 aufrufne damit er auf datenbank zu greift und und selcet command ausfüht
+            string sqlCommnad = "SELECT * FROM Eigenschaften";
+            DM.LoadData2Table(sqlCommnad, "ElementTable");
+
+
+
         }
 
 
@@ -80,14 +93,5 @@ namespace Chemistry_Assistant
             AddUserControll(rechner);
         }
 
-        private void TSL_Status_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void statusStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
     }
 }
