@@ -342,14 +342,6 @@ namespace Chemistry_Assistant
                 fbConnection.Close();
             }
         }
-        public void Select()
-        {
-
-        }
-
-
-
-
 
 
 
@@ -410,21 +402,7 @@ namespace Chemistry_Assistant
             }
         }
 
-        public void importImageToTabel(string SqlString)
-        {
-            fbConnection.Open();
-            byte[] imageData = File.ReadAllBytes("F:\\Chemistry Assistant\\Chemistry Assistant\\Resources\\helium.jpg");
 
-            using (FbCommand cmd = new FbCommand(SqlString, fbConnection))
-            {
-                cmd.Parameters.AddWithValue("1", 1);
-                cmd.Parameters.AddWithValue("helium.jpg", imageData);
-                cmd.ExecuteNonQuery();
-            }
-
-            fbConnection.Close();
-
-        }
 
       
         public void ResetTable(ref DataSet ds, string tableName)

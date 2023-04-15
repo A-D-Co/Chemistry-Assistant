@@ -21,12 +21,12 @@ namespace Chemistry_Assistant
         private void button1_Click(object sender, EventArgs e)
         {
             Molaremasse();
-            //label1.Text = Convert.ToString( Molaremasse());
+
         }
 
         private void Molaremasse()
         {
-            string formula = textBox1.Text;
+            string formula = Tb_Formel.Text;
             double Molare = 0;
             string element = "";
 
@@ -60,30 +60,44 @@ namespace Chemistry_Assistant
                         Molare += GetElementMass(element);
                     }    
                 }
-
-
             }
-            Console.WriteLine(Molare);
-             label1.Text = Molare.ToString();
+             
+            double Mol= Convert.ToDouble(TB_Mol.Text);
+            Mol = Molare * Mol;
+            Console.WriteLine(Mol);
+            TB_Masse.Text = Mol.ToString();
         }
 
         static double GetElementMass(string symbol)
         {
-            switch (symbol)
+            // auf datamodule im Mainpage zuweisen
+            Datamodule data = MainPage.DM;
+
+            //Das SelectElement löschen 
+            data.RemoveTable(ref data.ds, "SelectElement");
+            
+            string sqlcom = "SELECT a.RELATIVE_ATOMMASSE FROM T_ELEMENTE_EIGENSCHAFT a WHERE   a.ELEMENTSYMBOL = '"+symbol+"'";
+
+            //Tabelle loaden vom datenbank
+            data.LoadData2Table(sqlcom,"SelectElement");
+
+            //die autom masse von tabelle holen
+            string AtomMasse = data.ds.Tables["SelectElement"].Rows[0][0].ToString();
+
+            //checken wenn im tabelle punkt ist wird ersetzt zum komma
+            if(AtomMasse.IndexOf('.') != -1)
             {
-                case "H": return 1.0079;
-                case "He": return 4.0026;
-                case "Li": return 6.941;
-                case "Be": return 9.0122;
-                case "B": return 10.81;
-                case "C": return 12.01;
-                case "N": return 14.01;
-                case "O": return 15.999;
-                case "F": return 19.00;
-                case "Ne": return 20.18;
-                default: throw new ArgumentException("Invalid element symbol: " + symbol);
+
+                AtomMasse = AtomMasse.Replace('.', ',');
             }
+
+
+            double mass = Convert.ToDouble(AtomMasse);
+            return mass;
+
         }
+
+
     }
 
 

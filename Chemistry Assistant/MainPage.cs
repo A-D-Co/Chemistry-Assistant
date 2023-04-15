@@ -10,6 +10,7 @@ namespace Chemistry_Assistant
         {
 
             InitializeComponent();
+
             PSE pse = new PSE();
             AddUserControll(pse);
             //wird zum daten bank verbunden und alle daten wird selected
@@ -48,7 +49,7 @@ namespace Chemistry_Assistant
                 {
                     DM = new Datamodule("SYSDBA",
                                    "Diyar1010",
-                                   "F:\\Chemistry Assistant\\Chemistry Assistant\\DB\\Elementen.FDB",
+                                   "F:\\Chemistry Assistant\\Chemistry Assistant\\DB\\CHEMISTRY_ASSISTANT.FDB",
                                    "localhost",
                                    3050
                                    );
@@ -69,9 +70,8 @@ namespace Chemistry_Assistant
 
 
             //das loaddata2 aufrufne damit er auf datenbank zu greift und und selcet command ausfüht
-            string sqlCommnad = "SELECT * FROM Eigenschaften";
+            string sqlCommnad = "SELECT * FROM T_ELEMENTE_EIGENSCHAFT";
             DM.LoadData2Table(sqlCommnad, "ElementTable");
-
 
 
         }

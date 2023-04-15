@@ -211,7 +211,7 @@
             // TB_Deutschername
             // 
             this.TB_Deutschername.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TB_Deutschername.Location = new System.Drawing.Point(19, 94);
+            this.TB_Deutschername.Location = new System.Drawing.Point(19, 90);
             this.TB_Deutschername.Name = "TB_Deutschername";
             this.TB_Deutschername.ReadOnly = true;
             this.TB_Deutschername.Size = new System.Drawing.Size(448, 27);

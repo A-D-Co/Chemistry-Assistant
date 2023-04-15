@@ -53,7 +53,7 @@ namespace Chemistry_Assistant
             
             data = MainPage.DM.ds;
 
-            MainPage.DM.LoadData2Table("SELECT * FROM Eigenschaften", "ElementTable");
+            MainPage.DM.LoadData2Table("SELECT * FROM T_ELEMENTE_EIGENSCHAFT", "ElementTable");
 
             dataGridView1.DataSource = MainPage.DM.ds.Tables[0];
             
