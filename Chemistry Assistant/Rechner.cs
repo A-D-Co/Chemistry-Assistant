@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -22,16 +23,27 @@ namespace Chemistry_Assistant
         {
             Molaremasse();
 
+
         }
+
+        private double molare = 0;
+        private double mol = 0;
+        private double masse = 0;
+        private bool checkFirstChange = false;
 
         private void Molaremasse()
         {
+            #region V1
+            /*
             string formula = Tb_Formel.Text;
             double Molare = 0;
             string element = "";
+            int exponent = 0;
+            string temp = "";
 
             for (int i = 0; i < formula.Length; i++)
             {
+                temp = "";
                 //Alle Buchstaben wirden in ein Char gespeichter an laufe einer schleife
                 char c = formula[i];
 
@@ -46,12 +58,13 @@ namespace Chemistry_Assistant
                     {
                         element += formula[i + 1];
                         Molare += GetElementMass(element);
-                    }
+                    }/*
                     //Wird gegucht ob nächte charakter ein zahl ist damit es mal gemacht wird 
-                    else if (i + 1 < formula.Length && char.IsDigit(formula[i + 1]))
+                    else if (char.IsNumber(c))
                     {
-                        Console.WriteLine();
-                        Molare += GetElementMass(element)*2;
+                        exponent= c;
+                        Console.WriteLine(exponent);
+                        Molare += GetElementMass(element) * exponent;
 
                     }
                     // wenn garnicht trefft dass soll das element in element mass gesuchen werden 
@@ -60,12 +73,72 @@ namespace Chemistry_Assistant
                         Molare += GetElementMass(element);
                     }    
                 }
+                //Wird gegucht ob nächte charakter ein zahl ist damit es mal gemacht wird 
+                else if (char.IsNumber(c))
+                {
+                    //um Char zu string machen weil wenn man direkt char zu in macht kommt unicode für das nummer
+                    temp= c.ToString();
+                    exponent =  Convert.ToInt16(temp);
+                    Console.WriteLine(exponent);
+                    Molare = GetElementMass(element) * exponent;
+
+                }
             }
              
             double Mol= Convert.ToDouble(TB_Mol.Text);
             Mol = Molare * Mol;
             Console.WriteLine(Mol);
-            TB_Masse.Text = Mol.ToString();
+            TB_Masse.Text = Mol.ToString();*/
+            #endregion
+            #region v2
+
+            checkFirstChange= false;
+            string formula = Tb_Formel.Text;
+            string element = "";
+            molare = 0;
+            int temp = 0;
+
+            for (int i = 0; i < formula.Length; i++)
+            {
+                element = "";
+                if (char.IsUpper(formula[i]))
+                {
+                    if (i + 1 < formula.Length && char.IsLower(formula[i + 1]))
+                    {
+                        element += formula[i];
+                        element += formula[i+1];
+                        molare += GetElementMass(element);
+
+                    }
+                    else
+                    {
+                        molare += GetElementMass(formula[i].ToString());
+                    }
+
+
+                }
+                if (i + 1 < formula.Length && char.IsDigit(formula[i + 1]))
+                {
+
+                    //https://www.techiedelight.com/convert-char-to-int-csharp/
+                    temp = (int)Char.GetNumericValue(formula[i + 1]); 
+                    molare = molare * temp;
+                    Console.WriteLine(molare);
+
+                }
+
+            }
+
+            TB_MolareMass.Text = molare.ToString(); 
+
+            mol = Convert.ToDouble(TB_Mol.Text);
+            mol = molare * mol;
+            TB_Masse.Text = mol.ToString();
+
+            checkFirstChange = true;
+
+
+            #endregion
         }
 
         static double GetElementMass(string symbol)
@@ -97,7 +170,50 @@ namespace Chemistry_Assistant
 
         }
 
+        private void TB_Masse_TextChanged(object sender, EventArgs e)
+        {
+            //Check wenn es durch Button geändert würde oder durch benutzer
+            if(checkFirstChange == true)
+            {
+                try
+                {
+                     masse = Convert.ToDouble(TB_Masse.Text);
+                    mol = masse / molare;
+                    TB_Mol.Text = mol.ToString();
+                }
+                catch (FormatException)
+                {
+                    TB_Masse.Text = "Bitte Nur Zahlen schreiben!!";
+                }
+                
+                
 
+            }
+            
+
+        }
+
+        private void TB_Mol_TextChanged(object sender, EventArgs e)
+        {
+
+            //Check wenn es durch Button geändert würde oder durch benutzer
+            if (checkFirstChange == true)
+            {
+                try
+                {
+                    mol = Convert.ToDouble(TB_Mol.Text);
+                    mol = molare * mol;
+                    TB_Masse.Text = mol.ToString();
+                }
+                catch (FormatException)
+                {
+                    TB_Masse.Text = "Bitte Nur Zahlen schreiben!!";
+                }
+
+
+
+            }
+        }
     }
 
 
