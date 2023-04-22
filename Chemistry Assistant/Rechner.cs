@@ -1,13 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Drawing.Drawing2D;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Chemistry_Assistant
@@ -19,12 +10,6 @@ namespace Chemistry_Assistant
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Molaremasse();
-
-
-        }
 
         private double molare = 0;
         private double mol = 0;
@@ -33,83 +18,35 @@ namespace Chemistry_Assistant
 
         private void Molaremasse()
         {
-            #region V1
-            /*
-            string formula = Tb_Formel.Text;
-            double Molare = 0;
-            string element = "";
-            int exponent = 0;
-            string temp = "";
-
-            for (int i = 0; i < formula.Length; i++)
-            {
-                temp = "";
-                //Alle Buchstaben wirden in ein Char gespeichter an laufe einer schleife
-                char c = formula[i];
-
-                //Wird geguckt ob Der Charakter groß ist 
-                if (char.IsUpper(c))
-                {
-                    //Charakter wird in Element gespeichert
-                    element = c.ToString();
-
-                    //Wird geguckt ob nächte Buchstabe Klein ist Wenn ja dann ist das Anders element und das erste und zweite Charakter wirden zusammen gefügt
-                    if (i + 1 < formula.Length && char.IsLower(formula[i + 1]))
-                    {
-                        element += formula[i + 1];
-                        Molare += GetElementMass(element);
-                    }/*
-                    //Wird gegucht ob nächte charakter ein zahl ist damit es mal gemacht wird 
-                    else if (char.IsNumber(c))
-                    {
-                        exponent= c;
-                        Console.WriteLine(exponent);
-                        Molare += GetElementMass(element) * exponent;
-
-                    }
-                    // wenn garnicht trefft dass soll das element in element mass gesuchen werden 
-                    else
-                    {
-                        Molare += GetElementMass(element);
-                    }    
-                }
-                //Wird gegucht ob nächte charakter ein zahl ist damit es mal gemacht wird 
-                else if (char.IsNumber(c))
-                {
-                    //um Char zu string machen weil wenn man direkt char zu in macht kommt unicode für das nummer
-                    temp= c.ToString();
-                    exponent =  Convert.ToInt16(temp);
-                    Console.WriteLine(exponent);
-                    Molare = GetElementMass(element) * exponent;
-
-                }
-            }
-             
-            double Mol= Convert.ToDouble(TB_Mol.Text);
-            Mol = Molare * Mol;
-            Console.WriteLine(Mol);
-            TB_Masse.Text = Mol.ToString();*/
-            #endregion
             #region v2
 
-            checkFirstChange= false;
+            checkFirstChange = false;
             string formula = Tb_Formel.Text;
             string element = "";
             molare = 0;
             int temp = 0;
 
+            //schreifle um jedes Char in formel einzeilnm
             for (int i = 0; i < formula.Length; i++)
             {
+                //element wird geleert für neues Char 
                 element = "";
+
+                //checken ob Ist Groß buchstabe
                 if (char.IsUpper(formula[i]))
                 {
+                    //Checken ob nächste buchstabe ein klein buchstabe ist
                     if (i + 1 < formula.Length && char.IsLower(formula[i + 1]))
                     {
+                        //das groß buchstabe wird in element string gespeicht 
                         element += formula[i];
-                        element += formula[i+1];
+                        //das zweite buchstabe in string hinzugefütt um daten bank zu suchen 
+                        element += formula[i + 1];
+                        //im daten bank suchen
                         molare += GetElementMass(element);
 
                     }
+                    //sonst das Element in Datenbank suchen
                     else
                     {
                         molare += GetElementMass(formula[i].ToString());
@@ -117,24 +54,29 @@ namespace Chemistry_Assistant
 
 
                 }
+                //chenken ob sich um zahl handelt 
                 if (i + 1 < formula.Length && char.IsDigit(formula[i + 1]))
                 {
 
                     //https://www.techiedelight.com/convert-char-to-int-csharp/
-                    temp = (int)Char.GetNumericValue(formula[i + 1]); 
+                    //Char zu int Conventern 
+                    temp = (int)Char.GetNumericValue(formula[i + 1]);
                     molare = molare * temp;
-                    Console.WriteLine(molare);
 
                 }
 
             }
 
-            TB_MolareMass.Text = molare.ToString(); 
-
+            // Das molare masse eingeben 
+            TB_MolareMass.Text = molare.ToString();
+            //das eingegeben mol von benutzer checken
             mol = Convert.ToDouble(TB_Mol.Text);
             mol = molare * mol;
+            mol = Math.Round(mol, 3);
+            //Masse in g ein geben
             TB_Masse.Text = mol.ToString();
-
+            
+            //das erste änderung bool zu true machen damit der benutzer es in laufzeit ändern kann
             checkFirstChange = true;
 
 
@@ -148,19 +90,20 @@ namespace Chemistry_Assistant
 
             //Das SelectElement löschen 
             data.RemoveTable(ref data.ds, "SelectElement");
-            
-            string sqlcom = "SELECT a.RELATIVE_ATOMMASSE FROM T_ELEMENTE_EIGENSCHAFT a WHERE   a.ELEMENTSYMBOL = '"+symbol+"'";
+
+            string sqlcom = "SELECT a.RELATIVE_ATOMMASSE FROM T_ELEMENTE_EIGENSCHAFT a WHERE   a.ELEMENTSYMBOL = '" + symbol + "'";
 
             //Tabelle loaden vom datenbank
-            data.LoadData2Table(sqlcom,"SelectElement");
+            data.LoadData2Table(sqlcom, "SelectElement");
 
             //die autom masse von tabelle holen
             string AtomMasse = data.ds.Tables["SelectElement"].Rows[0][0].ToString();
 
-            //checken wenn im tabelle punkt ist wird ersetzt zum komma
-            if(AtomMasse.IndexOf('.') != -1)
-            {
+            
 
+            //checken wenn im tabelle punkt ist wird ersetzt zum komma
+            if (AtomMasse.IndexOf('.') != -1)
+            {
                 AtomMasse = AtomMasse.Replace('.', ',');
             }
 
@@ -173,23 +116,25 @@ namespace Chemistry_Assistant
         private void TB_Masse_TextChanged(object sender, EventArgs e)
         {
             //Check wenn es durch Button geändert würde oder durch benutzer
-            if(checkFirstChange == true)
+            if (checkFirstChange == true)
             {
                 try
                 {
-                     masse = Convert.ToDouble(TB_Masse.Text);
+                    masse = Convert.ToDouble(TB_Masse.Text);
                     mol = masse / molare;
+                    mol = Math.Round(mol, 3);
                     TB_Mol.Text = mol.ToString();
                 }
                 catch (FormatException)
                 {
                     TB_Masse.Text = "Bitte Nur Zahlen schreiben!!";
+
                 }
-                
-                
+
+
 
             }
-            
+
 
         }
 
@@ -203,6 +148,7 @@ namespace Chemistry_Assistant
                 {
                     mol = Convert.ToDouble(TB_Mol.Text);
                     mol = molare * mol;
+                    mol = Math.Round(mol, 3);
                     TB_Masse.Text = mol.ToString();
                 }
                 catch (FormatException)
@@ -213,6 +159,13 @@ namespace Chemistry_Assistant
 
 
             }
+        }
+
+        private void BT_Rechnen_Click(object sender, EventArgs e)
+        {
+            Molaremasse();
+            
+
         }
     }
 

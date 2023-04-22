@@ -32,7 +32,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.Tb_Formel = new System.Windows.Forms.TextBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.button1 = new System.Windows.Forms.Button();
+            this.BT_Rechnen = new System.Windows.Forms.Button();
             this.L_Formel = new System.Windows.Forms.Label();
             this.L_Mol = new System.Windows.Forms.Label();
             this.TB_Mol = new System.Windows.Forms.TextBox();
@@ -54,7 +54,7 @@
             // 
             // Tb_Formel
             // 
-            this.Tb_Formel.Location = new System.Drawing.Point(166, 87);
+            this.Tb_Formel.Location = new System.Drawing.Point(199, 140);
             this.Tb_Formel.Name = "Tb_Formel";
             this.Tb_Formel.Size = new System.Drawing.Size(199, 20);
             this.Tb_Formel.TabIndex = 1;
@@ -64,21 +64,21 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-            // button1
+            // BT_Rechnen
             // 
-            this.button1.Location = new System.Drawing.Point(386, 95);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.BT_Rechnen.Location = new System.Drawing.Point(168, 265);
+            this.BT_Rechnen.Name = "BT_Rechnen";
+            this.BT_Rechnen.Size = new System.Drawing.Size(75, 23);
+            this.BT_Rechnen.TabIndex = 3;
+            this.BT_Rechnen.Text = "Rechnen";
+            this.BT_Rechnen.UseVisualStyleBackColor = true;
+            this.BT_Rechnen.Click += new System.EventHandler(this.BT_Rechnen_Click);
             // 
             // L_Formel
             // 
             this.L_Formel.AutoSize = true;
             this.L_Formel.Font = new System.Drawing.Font("Myanmar Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.L_Formel.Location = new System.Drawing.Point(85, 87);
+            this.L_Formel.Location = new System.Drawing.Point(118, 140);
             this.L_Formel.Name = "L_Formel";
             this.L_Formel.Size = new System.Drawing.Size(66, 29);
             this.L_Formel.TabIndex = 4;
@@ -88,7 +88,7 @@
             // 
             this.L_Mol.AutoSize = true;
             this.L_Mol.Font = new System.Drawing.Font("Myanmar Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.L_Mol.Location = new System.Drawing.Point(108, 110);
+            this.L_Mol.Location = new System.Drawing.Point(141, 163);
             this.L_Mol.Name = "L_Mol";
             this.L_Mol.Size = new System.Drawing.Size(43, 29);
             this.L_Mol.TabIndex = 5;
@@ -96,7 +96,7 @@
             // 
             // TB_Mol
             // 
-            this.TB_Mol.Location = new System.Drawing.Point(166, 113);
+            this.TB_Mol.Location = new System.Drawing.Point(199, 166);
             this.TB_Mol.Name = "TB_Mol";
             this.TB_Mol.Size = new System.Drawing.Size(199, 20);
             this.TB_Mol.TabIndex = 6;
@@ -107,7 +107,7 @@
             // 
             this.L_Masse.AutoSize = true;
             this.L_Masse.Font = new System.Drawing.Font("Myanmar Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.L_Masse.Location = new System.Drawing.Point(58, 136);
+            this.L_Masse.Location = new System.Drawing.Point(91, 189);
             this.L_Masse.Name = "L_Masse";
             this.L_Masse.Size = new System.Drawing.Size(93, 29);
             this.L_Masse.TabIndex = 7;
@@ -116,7 +116,7 @@
             // TB_Masse
             // 
             this.TB_Masse.AccessibleName = "";
-            this.TB_Masse.Location = new System.Drawing.Point(166, 139);
+            this.TB_Masse.Location = new System.Drawing.Point(199, 192);
             this.TB_Masse.Name = "TB_Masse";
             this.TB_Masse.Size = new System.Drawing.Size(199, 20);
             this.TB_Masse.TabIndex = 8;
@@ -125,7 +125,7 @@
             // 
             // TB_MolareMass
             // 
-            this.TB_MolareMass.Location = new System.Drawing.Point(166, 165);
+            this.TB_MolareMass.Location = new System.Drawing.Point(199, 218);
             this.TB_MolareMass.Name = "TB_MolareMass";
             this.TB_MolareMass.ReadOnly = true;
             this.TB_MolareMass.Size = new System.Drawing.Size(199, 20);
@@ -136,7 +136,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Myanmar Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(-2, 162);
+            this.label2.Location = new System.Drawing.Point(31, 215);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(153, 29);
             this.label2.TabIndex = 10;
@@ -153,7 +153,7 @@
             this.Controls.Add(this.TB_Mol);
             this.Controls.Add(this.L_Mol);
             this.Controls.Add(this.L_Formel);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.BT_Rechnen);
             this.Controls.Add(this.Tb_Formel);
             this.Controls.Add(this.label1);
             this.Name = "Rechner";
@@ -168,7 +168,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox Tb_Formel;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button BT_Rechnen;
         private System.Windows.Forms.Label L_Formel;
         private System.Windows.Forms.Label L_Mol;
         private System.Windows.Forms.TextBox TB_Mol;

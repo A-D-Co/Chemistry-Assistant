@@ -94,7 +94,7 @@
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            this.button1.MouseEnter += new System.EventHandler(this.button1_MouseEnter);
+
             // 
             // label2
             // 
@@ -113,7 +113,6 @@
             this.button2.TabIndex = 7;
             this.button2.Text = "button2";
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.MouseEnter += new System.EventHandler(this.button2_MouseEnter);
             // 
             // PSE
             // 
