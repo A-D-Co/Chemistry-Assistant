@@ -66,7 +66,7 @@
             // 
             // BT_Rechnen
             // 
-            this.BT_Rechnen.Location = new System.Drawing.Point(168, 265);
+            this.BT_Rechnen.Location = new System.Drawing.Point(199, 258);
             this.BT_Rechnen.Name = "BT_Rechnen";
             this.BT_Rechnen.Size = new System.Drawing.Size(75, 23);
             this.BT_Rechnen.TabIndex = 3;

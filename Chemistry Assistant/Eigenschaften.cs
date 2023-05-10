@@ -14,10 +14,10 @@ namespace Chemistry_Assistant
 {
     public partial class Eigenschaften : Form
     {
-        public Eigenschaften(int elementId,string elementName)
+        public Eigenschaften(int elementId)
         {
             InitializeComponent();
-            ElementName= elementName;
+
             Eigenschaften_Load(elementId);
 
         }
@@ -25,20 +25,18 @@ namespace Chemistry_Assistant
 
         public DataSet data = new DataSet();
 
-        private string ElementName;
-
 
 
         private void Eigenschaften_Load(int elementId)
         {
             //-1 weil die Rows beginnen mir 0 
             elementId -= 1;
-            this.Text = ElementName;
+           
 
             //Auf dataset refrenciert die im datamoul um table herzustellen
             data = MainPage.DM.ds;
 
-
+            this.Text = data.Tables[0].Rows[elementId][3].ToString(); ;
 
             if (data.Tables[0].Rows.Count > 0)
             {

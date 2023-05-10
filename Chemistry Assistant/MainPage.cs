@@ -65,12 +65,12 @@ namespace Chemistry_Assistant
                 string Database = DM.GetDatabaseName();
                 string Servername = DM.GetDatasourceName();
 
-                this.TSS_Status.Text = ServerConnector + " / " + Servername + " / " + Database;
+                //this.TSS_Status.Text = ServerConnector + " / " + Servername + " / " + Database;
 
 
 
             //das loaddata2 aufrufne damit er auf datenbank zu greift und und selcet command ausfüht
-            string sqlCommnad = "SELECT * FROM T_ELEMENTE_EIGENSCHAFT";
+            string sqlCommnad = "SELECT * FROM T_ELEMENTE_EIGENSCHAFT order by id ; ";
             DM.LoadData2Table(sqlCommnad, "ElementTable");
 
 

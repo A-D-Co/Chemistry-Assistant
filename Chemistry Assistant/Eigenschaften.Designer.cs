@@ -336,7 +336,6 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Ordunungszahl);
             this.Name = "Eigenschaften";
-            this.Text = "^^0";
             this.ResumeLayout(false);
             this.PerformLayout();
 
