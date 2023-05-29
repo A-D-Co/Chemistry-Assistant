@@ -49,7 +49,7 @@ namespace Chemistry_Assistant
                 {
                     DM = new Datamodule("SYSDBA",
                                    "Diyar1010",
-                                   "F:\\Chemistry Assistant\\Chemistry Assistant\\DB\\CHEMISTRY_ASSISTANT.FDB",
+                                   @"F:\Chemistry Assistant\Chemistry Assistant\Datenbank\CHEMISTRY_ASSISTANT.FDB",
                                    "localhost",
                                    3050
                                    );
@@ -61,11 +61,6 @@ namespace Chemistry_Assistant
                     MessageBox.Show("Datenbank kann nicht geöffnet werden allllloooo verpiss dich " + ex.Message);
 
                 }
-                string ServerConnector = DM.GetServerVersion();
-                string Database = DM.GetDatabaseName();
-                string Servername = DM.GetDatasourceName();
-
-                //this.TSS_Status.Text = ServerConnector + " / " + Servername + " / " + Database;
 
 
 
@@ -76,16 +71,7 @@ namespace Chemistry_Assistant
 
         }
 
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            // pse page zugeweist
-            PSE pse = new PSE(); 
-            //methode addusercontrill wird wieder gerufen
-            AddUserControll(pse);
-        }
-
-        private void button2_Click(object sender, EventArgs e)
+        private void Bt_Rechner_Click(object sender, EventArgs e)
         {
             // pse page zugeweist
             Rechner rechner = new Rechner();
@@ -93,5 +79,13 @@ namespace Chemistry_Assistant
             AddUserControll(rechner);
         }
 
+        private void BT_Pse_Click(object sender, EventArgs e)
+        {   
+            // pse page zugeweist
+            PSE pse = new PSE();
+            //methode addusercontrill wird wieder gerufen
+            AddUserControll(pse);
+
+        }
     }
 }

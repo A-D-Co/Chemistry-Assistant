@@ -13,14 +13,14 @@ namespace Chemistry_Assistant
 
         private double molare = 0;
         private double mol = 0;
-        private double masse = 0;
-        private bool checkFirstChange = false;
+        private double molmasse = 0;
+
 
         private void Molaremasse()
         {
-            #region v2
 
-            checkFirstChange = false;
+
+            #region v2
             string formula = Tb_Formel.Text;
             string element = "";
             molare = 0;
@@ -67,18 +67,9 @@ namespace Chemistry_Assistant
 
             }
 
-            // Das molare masse eingeben 
-            TB_MolareMass.Text = molare.ToString();
-            //das eingegeben mol von benutzer checken
-            mol = Convert.ToDouble(TB_Mol.Text);
-            mol = molare * mol;
-            mol = Math.Round(mol, 3);
-            //Masse in g ein geben
-            TB_Masse.Text = mol.ToString();
             
-            //das erste änderung bool zu true machen damit der benutzer es in laufzeit ändern kann
-            checkFirstChange = true;
-
+            // Das molare molmasse eingeben 
+            TB_MolareMass.Text = molare.ToString();
 
             #endregion
         }
@@ -88,6 +79,7 @@ namespace Chemistry_Assistant
             // auf datamodule im Mainpage zuweisen
             Datamodule data = MainPage.DM;
 
+
             //Das SelectElement löschen 
             data.RemoveTable(ref data.ds, "SelectElement");
 
@@ -96,7 +88,7 @@ namespace Chemistry_Assistant
             //Tabelle loaden vom datenbank
             data.LoadData2Table(sqlcom, "SelectElement");
 
-            //die autom masse von tabelle holen
+            //die autom molmasse von tabelle holen
             string AtomMasse = data.ds.Tables["SelectElement"].Rows[0][0].ToString();
 
             
@@ -113,58 +105,27 @@ namespace Chemistry_Assistant
 
         }
 
-        private void TB_Masse_TextChanged(object sender, EventArgs e)
+
+        private void Rechnen()
         {
-            //Check wenn es durch Button geändert würde oder durch benutzer
-            if (checkFirstChange == true)
-            {
-                try
-                {
-                    masse = Convert.ToDouble(TB_Masse.Text);
-                    mol = masse / molare;
-                    mol = Math.Round(mol, 3);
-                    TB_Mol.Text = mol.ToString();
-                }
-                catch (FormatException)
-                {
-                    TB_Masse.Text = "Bitte Nur Zahlen schreiben!!";
+            Molaremasse();
+            mol = Convert.ToDouble(TB_Mol.Text);
+            molmasse = Convert.ToDouble(TB_Masse.Text);
 
-                }
+            mol = molare * mol;
+            mol = Math.Round(mol, 3);
+            TB_Masse.Text = mol.ToString();
 
-
-
-            }
-
+            mol = molmasse / molare;
+            mol = Math.Round(mol, 3);
+            TB_Mol.Text = mol.ToString();
 
         }
 
-        private void TB_Mol_TextChanged(object sender, EventArgs e)
-        {
-
-            //Check wenn es durch Button geändert würde oder durch benutzer
-            if (checkFirstChange == true)
-            {
-                try
-                {
-                    mol = Convert.ToDouble(TB_Mol.Text);
-                    mol = molare * mol;
-                    mol = Math.Round(mol, 3);
-                    TB_Masse.Text = mol.ToString();
-                }
-                catch (FormatException)
-                {
-                    TB_Masse.Text = "Bitte Nur Zahlen schreiben!!";
-                }
-
-
-
-            }
-        }
 
         private void BT_Rechnen_Click(object sender, EventArgs e)
         {
-            Molaremasse();
-            
+            Rechnen();
 
         }
     }

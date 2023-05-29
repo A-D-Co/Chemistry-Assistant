@@ -46,7 +46,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Myanmar Text", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(436, 9);
+            this.label1.Location = new System.Drawing.Point(242, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(97, 37);
             this.label1.TabIndex = 0;
@@ -101,7 +101,7 @@
             this.TB_Mol.Size = new System.Drawing.Size(199, 20);
             this.TB_Mol.TabIndex = 6;
             this.TB_Mol.Text = "1";
-            this.TB_Mol.TextChanged += new System.EventHandler(this.TB_Mol_TextChanged);
+
             // 
             // L_Masse
             // 
@@ -121,7 +121,7 @@
             this.TB_Masse.Size = new System.Drawing.Size(199, 20);
             this.TB_Masse.TabIndex = 8;
             this.TB_Masse.Text = "0";
-            this.TB_Masse.TextChanged += new System.EventHandler(this.TB_Masse_TextChanged);
+
             // 
             // TB_MolareMass
             // 
@@ -157,7 +157,7 @@
             this.Controls.Add(this.Tb_Formel);
             this.Controls.Add(this.label1);
             this.Name = "Rechner";
-            this.Size = new System.Drawing.Size(985, 489);
+            this.Size = new System.Drawing.Size(1920, 1080);
             this.ResumeLayout(false);
             this.PerformLayout();
 

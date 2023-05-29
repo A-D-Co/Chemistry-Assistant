@@ -40,7 +40,8 @@ namespace Chemistry_Assistant
 
             if (data.Tables[0].Rows.Count > 0)
             {
-
+                _lbl_Ordnungzahl.Text = data.Tables[0].Rows[elementId][1].ToString();
+                _lbl_Elementssymbol.Text = data.Tables[0].Rows[elementId][2].ToString();
                 TB_Deutschername.Text = data.Tables[0].Rows[elementId][3].ToString();
                 TB_Englischername.Text = data.Tables[0].Rows[elementId][4].ToString();
                 TB_Elektronenkonfiguration.Text = data.Tables[0].Rows[elementId][5].ToString();
@@ -62,6 +63,7 @@ namespace Chemistry_Assistant
 
 
         }
+
 
     }
 
