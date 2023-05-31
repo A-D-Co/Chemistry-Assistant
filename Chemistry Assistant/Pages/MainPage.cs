@@ -1,4 +1,5 @@
-﻿using FirebirdSql.Data.FirebirdClient;
+﻿using Chemistry_Assistant.Pages;
+using FirebirdSql.Data.FirebirdClient;
 using System;
 using System.Windows.Forms;
 
@@ -86,6 +87,12 @@ namespace Chemistry_Assistant
             //methode addusercontrill wird wieder gerufen
             AddUserControll(pse);
 
+        }
+
+        private void Bt_simulation_Click(object sender, EventArgs e)
+        {
+            simulation simulation= new simulation();
+            AddUserControll(simulation);
         }
     }
 }
