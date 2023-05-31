@@ -101,7 +101,6 @@
             this.TB_Mol.Size = new System.Drawing.Size(199, 20);
             this.TB_Mol.TabIndex = 6;
             this.TB_Mol.Text = "1";
-
             // 
             // L_Masse
             // 
@@ -121,7 +120,6 @@
             this.TB_Masse.Size = new System.Drawing.Size(199, 20);
             this.TB_Masse.TabIndex = 8;
             this.TB_Masse.Text = "0";
-
             // 
             // TB_MolareMass
             // 
