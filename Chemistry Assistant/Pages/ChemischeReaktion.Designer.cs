@@ -35,6 +35,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this._T_Movement = new System.Windows.Forms.Timer(this.components);
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this._Trb_Sauerstoff)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._Trb_Wasserstoff)).BeginInit();
             this.SuspendLayout();
@@ -87,11 +88,21 @@
             // 
             this._T_Movement.Tick += new System.EventHandler(this._T_Movement_Tick);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(625, 27);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(35, 13);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "label3";
+            // 
             // ChemischeReaktion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this._Trb_Wasserstoff);
@@ -114,5 +125,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Timer _T_Movement;
+        private System.Windows.Forms.Label label3;
     }
 }
