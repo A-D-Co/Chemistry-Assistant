@@ -28,25 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this._P_Container = new System.Windows.Forms.Panel();
             this._Trb_Sauerstoff = new System.Windows.Forms.TrackBar();
             this._Trb_Wasserstoff = new System.Windows.Forms.TrackBar();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this._T_Movement = new System.Windows.Forms.Timer(this.components);
             this.label3 = new System.Windows.Forms.Label();
+            this._lbl_wasserstoff = new System.Windows.Forms.Label();
+            this.labl2 = new System.Windows.Forms.Label();
+            this._lbl_sauerstoff = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this._lbl_Wasser = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this._Trb_Sauerstoff)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._Trb_Wasserstoff)).BeginInit();
             this.SuspendLayout();
             // 
-            // panel1
+            // _P_Container
             // 
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(249, 450);
-            this.panel1.TabIndex = 0;
+            this._P_Container.Dock = System.Windows.Forms.DockStyle.Left;
+            this._P_Container.Location = new System.Drawing.Point(0, 0);
+            this._P_Container.Name = "_P_Container";
+            this._P_Container.Size = new System.Drawing.Size(249, 450);
+            this._P_Container.TabIndex = 0;
+            this._P_Container.Paint += new System.Windows.Forms.PaintEventHandler(this._P_Container_Paint1);
             // 
             // _Trb_Sauerstoff
             // 
@@ -84,32 +88,85 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "Wasserstoff";
             // 
-            // _T_Movement
-            // 
-            this._T_Movement.Tick += new System.EventHandler(this._T_Movement_Tick);
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(625, 27);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(393, 66);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 13);
+            this.label3.Size = new System.Drawing.Size(39, 25);
             this.label3.TabIndex = 5;
-            this.label3.Text = "label3";
+            this.label3.Text = "H2";
+            // 
+            // _lbl_wasserstoff
+            // 
+            this._lbl_wasserstoff.AutoSize = true;
+            this._lbl_wasserstoff.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this._lbl_wasserstoff.Location = new System.Drawing.Point(438, 66);
+            this._lbl_wasserstoff.Name = "_lbl_wasserstoff";
+            this._lbl_wasserstoff.Size = new System.Drawing.Size(24, 25);
+            this._lbl_wasserstoff.TabIndex = 6;
+            this._lbl_wasserstoff.Text = "0";
+            // 
+            // labl2
+            // 
+            this.labl2.AutoSize = true;
+            this.labl2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labl2.Location = new System.Drawing.Point(393, 101);
+            this.labl2.Name = "labl2";
+            this.labl2.Size = new System.Drawing.Size(40, 25);
+            this.labl2.TabIndex = 7;
+            this.labl2.Text = "O2";
+            // 
+            // _lbl_sauerstoff
+            // 
+            this._lbl_sauerstoff.AutoSize = true;
+            this._lbl_sauerstoff.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this._lbl_sauerstoff.Location = new System.Drawing.Point(438, 101);
+            this._lbl_sauerstoff.Name = "_lbl_sauerstoff";
+            this._lbl_sauerstoff.Size = new System.Drawing.Size(24, 25);
+            this._lbl_sauerstoff.TabIndex = 8;
+            this._lbl_sauerstoff.Text = "0";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(378, 137);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(55, 25);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "H2O";
+            // 
+            // _lbl_Wasser
+            // 
+            this._lbl_Wasser.AutoSize = true;
+            this._lbl_Wasser.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this._lbl_Wasser.Location = new System.Drawing.Point(438, 137);
+            this._lbl_Wasser.Name = "_lbl_Wasser";
+            this._lbl_Wasser.Size = new System.Drawing.Size(24, 25);
+            this._lbl_Wasser.TabIndex = 10;
+            this._lbl_Wasser.Text = "0";
             // 
             // ChemischeReaktion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this._lbl_Wasser);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this._lbl_sauerstoff);
+            this.Controls.Add(this.labl2);
+            this.Controls.Add(this._lbl_wasserstoff);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this._Trb_Wasserstoff);
             this.Controls.Add(this._Trb_Sauerstoff);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this._P_Container);
             this.Name = "ChemischeReaktion";
             this.Text = "ChemischeReaktion";
+            this.Load += new System.EventHandler(this.ChemischeReaktion_Load);
             ((System.ComponentModel.ISupportInitialize)(this._Trb_Sauerstoff)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this._Trb_Wasserstoff)).EndInit();
             this.ResumeLayout(false);
@@ -119,12 +176,16 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel _P_Container;
         private System.Windows.Forms.TrackBar _Trb_Sauerstoff;
         private System.Windows.Forms.TrackBar _Trb_Wasserstoff;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Timer _T_Movement;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label _lbl_wasserstoff;
+        private System.Windows.Forms.Label labl2;
+        private System.Windows.Forms.Label _lbl_sauerstoff;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label _lbl_Wasser;
     }
 }

@@ -16,57 +16,75 @@ namespace Chemistry_Assistant.Pages
         public ChemischeReaktion()
         {
             InitializeComponent();
-            _T_Movement.Start();
         }
 
-        Random random = new Random();
-        List<PictureBox> sauerstoffitems = new List<PictureBox>();
-        List<PictureBox> wasserstoffitems = new List<PictureBox>();
-        public void SpawnPicture(string ImagePath, List<PictureBox> items)
+
+        //Move klasse verärbt
+        Move move;
+
+        //listen für mölekulen
+        List<Move> SauerstoffItems = new List<Move>();
+        List<Move> WasserstoffItems = new List<Move>();
+
+
+
+        // um Kugel in das Panel zu zeichen 
+        private void _P_Container_Paint1(object sender, PaintEventArgs e)
         {
-            PictureBox pic = new PictureBox();
-            pic.Height = 30;
-            pic.Width = 30;
-            pic.BackColor = Color.Transparent;
-            pic.Image = Image.FromFile(ImagePath);
-
-            int x = random.Next(1, this.panel1.Width - pic.Width);
-            int y = random.Next(1, this.panel1.Height - pic.Height);
-
-            pic.Location = new Point(x, y);
-            items.Add(pic);
-            this.panel1.Controls.Add(pic);
-
-
-        }
-
-        public void deletePicture(List<PictureBox> items)
-        {
-            if (items.Count > 0)
+            foreach (Move item in SauerstoffItems)
             {
-                PictureBox pic = items[items.Count - 1];
-                this.panel1.Controls.Remove(pic);
-                items.RemoveAt(items.Count - 1);
+                item.Update();
+                item.OnpaintSauerstoff(e.Graphics);
             }
+            foreach (Move item in WasserstoffItems)
+            {
+                item.Update();
+                item.OnpaintWasserstoff(e.Graphics);
+            }
+        }
+
+
+        //werden von panel gelöscht
+        private void Delete(List<Move> moves)
+        {
+            if (moves.Count > 0)
+            {
+                Move move = moves[moves.Count - 1];
+                moves.RemoveAt(moves.Count - 1);
+            }
+        }
+
+        //panel jedes mal updaten
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            this._P_Container.Invalidate();
 
         }
 
+
+
+        //wenn benutzer es scrollt wirden mölekule gespawnt oder gelöscht
         private int lastvalue;
         private void _Trb_Sauerstoff_Scroll(object sender, EventArgs e)
         {
+
+
             int change = _Trb_Sauerstoff.Value - lastvalue;
             if (change > 0)
             {
-                //increasing
-                SpawnPicture(@"F:\Chemistry Assistant\Chemistry Assistant\Resources\Sauerstoff.png", sauerstoffitems);
+                //zunehmen
+                move = new Move(this._P_Container.Width, this._P_Container.Height);
+                this.SauerstoffItems.Add(move);
             }
             else if (change < 0)
             {
+                //verringen
+                Delete(SauerstoffItems);
 
-                //decreasing
-                deletePicture(sauerstoffitems);
             }
+
             lastvalue = _Trb_Sauerstoff.Value;
+            _lbl_sauerstoff.Text = _Trb_Sauerstoff.Value.ToString();
         }
 
         private int _lastvalue;
@@ -75,55 +93,31 @@ namespace Chemistry_Assistant.Pages
             int change = _Trb_Wasserstoff.Value - _lastvalue;
             if (change > 0)
             {
-                //increasing
-                SpawnPicture(@"F:\Chemistry Assistant\Chemistry Assistant\Resources\Wasserstoffmol.png",wasserstoffitems);
+                //zunehmen
+                move = new Move(this._P_Container.Width, this._P_Container.Height);
+                WasserstoffItems.Add(move);
             }
             else if (change < 0)
             {
-                //decreasing
-                deletePicture(wasserstoffitems);
+
+                //verringen
+                Delete(WasserstoffItems);
+
+
             }
             _lastvalue = _Trb_Wasserstoff.Value;
+            _lbl_wasserstoff.Text = _Trb_Wasserstoff.Value.ToString();
         }
 
-        private void _T_Movement_Tick(object sender, EventArgs e)
+
+        //wenn der page lädt
+        private void ChemischeReaktion_Load(object sender, EventArgs e)
         {
-            if (wasserstoffitems.Count > 0)
-            {
-                foreach (PictureBox pic in wasserstoffitems)
-                {
-                    int targetX = random.Next(1, this.panel1.Width - pic.Width);
-                    int targetY = random.Next(1, this.panel1.Height - pic.Height);
-
-                    int speed = 20; //
-
-                    int deltaX = (targetX - pic.Left) / speed;
-                    int deltaY = (targetY - pic.Top) / speed;
-
-                    pic.Left += deltaX;
-                    pic.Top += deltaY;
-
-
-                }
-            }
-            if (sauerstoffitems.Count > 0)
-            {
-                foreach (PictureBox pic in sauerstoffitems)
-                {
-                    int targetX = random.Next(1, this.panel1.Width - pic.Width);
-                    int targetY = random.Next(1, this.panel1.Height - pic.Height);
-
-                    int speed = 20; //
-
-                    int deltaX = (targetX - pic.Left) / speed;
-                    int deltaY = (targetY - pic.Top) / speed;
-
-                    pic.Left += deltaX;
-                    pic.Top += deltaY;
-
-
-                }
-            }
+            //this.DoubleBuffered = true;
+            Timer timer = new Timer();
+            timer.Interval = 10;
+            timer.Tick += Timer_Tick;
+            timer.Start();
         }
     }
 }
