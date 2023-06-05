@@ -24,23 +24,72 @@ namespace Chemistry_Assistant.Pages
 
         //listen für mölekulen
         List<Move> SauerstoffItems = new List<Move>();
-        List<Move> WasserstoffItems = new List<Move>();
 
+        List<Move> WasserstoffItems = new List<Move>();
+        List<Move> wasserItems = new List<Move>();
 
 
         // um Kugel in das Panel zu zeichen 
         private void _P_Container_Paint1(object sender, PaintEventArgs e)
         {
+
+            _lbl_sauerstoff.Text = SauerstoffItems.Count.ToString();
+            _lbl_wasserstoff.Text = WasserstoffItems.Count.ToString();
+            _lbl_Wasser.Text = wasserItems.Count.ToString();
+
+
             foreach (Move item in SauerstoffItems)
             {
                 item.Update();
                 item.OnpaintSauerstoff(e.Graphics);
+
             }
             foreach (Move item in WasserstoffItems)
             {
                 item.Update();
                 item.OnpaintWasserstoff(e.Graphics);
             }
+            foreach (Move item in wasserItems)
+            {
+                item.Update();
+                item.OnpaintWasser(e.Graphics);
+            }
+
+
+            bool hasOverlap = false;
+            List<Move> itemsToRemove = new List<Move>();
+
+            foreach (Move sauerstoffItem in SauerstoffItems)
+            {
+                foreach (Move wasserstoffItem in WasserstoffItems)
+                {
+                    if (wasserstoffItem.wasserstoff.IntersectsWith(sauerstoffItem.sauerstoff))
+                    {
+                        hasOverlap = true;
+                        itemsToRemove.Add(sauerstoffItem);
+                        itemsToRemove.Add(wasserstoffItem);
+                        break;
+                    }
+                }
+                if (hasOverlap)
+                    break;
+            }
+
+            if (hasOverlap)
+            {
+                foreach (Move item in itemsToRemove)
+                {
+                    SauerstoffItems.Remove(item);
+                    WasserstoffItems.Remove(item);
+                }
+                move = new Move(this._P_Container.Width, this._P_Container.Height);
+                wasserItems.Add(move);
+
+
+                move = new Move(this._P_Container.Width, this._P_Container.Height);
+                SauerstoffItems.Add(move);
+            }
+
         }
 
 
@@ -53,6 +102,7 @@ namespace Chemistry_Assistant.Pages
                 moves.RemoveAt(moves.Count - 1);
             }
         }
+
 
         //panel jedes mal updaten
         private void Timer_Tick(object sender, EventArgs e)
@@ -67,24 +117,18 @@ namespace Chemistry_Assistant.Pages
         private int lastvalue;
         private void _Trb_Sauerstoff_Scroll(object sender, EventArgs e)
         {
-
-
             int change = _Trb_Sauerstoff.Value - lastvalue;
             if (change > 0)
             {
-                //zunehmen
                 move = new Move(this._P_Container.Width, this._P_Container.Height);
                 this.SauerstoffItems.Add(move);
             }
             else if (change < 0)
             {
-                //verringen
+                //decreasing
                 Delete(SauerstoffItems);
-
             }
-
             lastvalue = _Trb_Sauerstoff.Value;
-            _lbl_sauerstoff.Text = _Trb_Sauerstoff.Value.ToString();
         }
 
         private int _lastvalue;
@@ -93,20 +137,16 @@ namespace Chemistry_Assistant.Pages
             int change = _Trb_Wasserstoff.Value - _lastvalue;
             if (change > 0)
             {
-                //zunehmen
                 move = new Move(this._P_Container.Width, this._P_Container.Height);
                 WasserstoffItems.Add(move);
             }
             else if (change < 0)
             {
-
-                //verringen
+                //decreasing
                 Delete(WasserstoffItems);
-
-
             }
             _lastvalue = _Trb_Wasserstoff.Value;
-            _lbl_wasserstoff.Text = _Trb_Wasserstoff.Value.ToString();
+            
         }
 
 

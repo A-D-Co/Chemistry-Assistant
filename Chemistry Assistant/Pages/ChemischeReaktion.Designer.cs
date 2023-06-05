@@ -45,10 +45,10 @@
             // 
             // _P_Container
             // 
-            this._P_Container.Dock = System.Windows.Forms.DockStyle.Left;
-            this._P_Container.Location = new System.Drawing.Point(0, 0);
+            this._P_Container.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this._P_Container.Location = new System.Drawing.Point(12, 12);
             this._P_Container.Name = "_P_Container";
-            this._P_Container.Size = new System.Drawing.Size(249, 450);
+            this._P_Container.Size = new System.Drawing.Size(324, 426);
             this._P_Container.TabIndex = 0;
             this._P_Container.Paint += new System.Windows.Forms.PaintEventHandler(this._P_Container_Paint1);
             // 
@@ -92,7 +92,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(393, 66);
+            this.label3.Location = new System.Drawing.Point(454, 22);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(39, 25);
             this.label3.TabIndex = 5;
@@ -102,7 +102,7 @@
             // 
             this._lbl_wasserstoff.AutoSize = true;
             this._lbl_wasserstoff.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._lbl_wasserstoff.Location = new System.Drawing.Point(438, 66);
+            this._lbl_wasserstoff.Location = new System.Drawing.Point(499, 22);
             this._lbl_wasserstoff.Name = "_lbl_wasserstoff";
             this._lbl_wasserstoff.Size = new System.Drawing.Size(24, 25);
             this._lbl_wasserstoff.TabIndex = 6;
@@ -112,7 +112,7 @@
             // 
             this.labl2.AutoSize = true;
             this.labl2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labl2.Location = new System.Drawing.Point(393, 101);
+            this.labl2.Location = new System.Drawing.Point(454, 47);
             this.labl2.Name = "labl2";
             this.labl2.Size = new System.Drawing.Size(40, 25);
             this.labl2.TabIndex = 7;
@@ -122,7 +122,7 @@
             // 
             this._lbl_sauerstoff.AutoSize = true;
             this._lbl_sauerstoff.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._lbl_sauerstoff.Location = new System.Drawing.Point(438, 101);
+            this._lbl_sauerstoff.Location = new System.Drawing.Point(499, 47);
             this._lbl_sauerstoff.Name = "_lbl_sauerstoff";
             this._lbl_sauerstoff.Size = new System.Drawing.Size(24, 25);
             this._lbl_sauerstoff.TabIndex = 8;
@@ -132,7 +132,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(378, 137);
+            this.label4.Location = new System.Drawing.Point(439, 72);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(55, 25);
             this.label4.TabIndex = 9;
@@ -142,7 +142,7 @@
             // 
             this._lbl_Wasser.AutoSize = true;
             this._lbl_Wasser.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._lbl_Wasser.Location = new System.Drawing.Point(438, 137);
+            this._lbl_Wasser.Location = new System.Drawing.Point(499, 72);
             this._lbl_Wasser.Name = "_lbl_Wasser";
             this._lbl_Wasser.Size = new System.Drawing.Size(24, 25);
             this._lbl_Wasser.TabIndex = 10;

@@ -116,6 +116,8 @@ namespace Chemistry_Assistant
             mol = Math.Round(mol, 3);
             TB_Masse.Text = mol.ToString();
 
+
+
             mol = molmasse / molare;
             mol = Math.Round(mol, 3);
             TB_Mol.Text = mol.ToString();

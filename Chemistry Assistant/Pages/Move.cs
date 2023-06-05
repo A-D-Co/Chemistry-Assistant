@@ -6,10 +6,7 @@ namespace Chemistry_Assistant.Pages
 {
     class Move
     {
-
-
         static Random random = new Random();
-
 
         Vector2 location;
         Vector2 velocity;
@@ -17,18 +14,19 @@ namespace Chemistry_Assistant.Pages
         int formWidth;
         int formHeight;
 
-        public Move(int width, int Height)
+        public Move(int width, int height)
         {
             formWidth = width;
-            formHeight = Height;
+            formHeight = height;
 
-            //wird breite und länge der panel genommen 
-            location = new Vector2(random.Next(width), random.Next(Height));
+
+            location = new Vector2(random.Next(width) - sauerstoff.Width, random.Next(height) - sauerstoff.Height);
             velocity = new Vector2(1, 1);
 
-            wasserstoff = new RectangleF(location.X, location.Y, 10, 10);
-            sauerstoff = new RectangleF(location.X, location.Y, 10, 10);
-
+                sauerstoff = new RectangleF(location.X, location.Y, 15, 15);
+                wasser = new RectangleF(location.X, location.Y, 15, 15);
+                wasserstoff = new RectangleF(location.X, location.Y, 15, 15);
+            
         }
 
         public void Update()
@@ -50,16 +48,6 @@ namespace Chemistry_Assistant.Pages
             location = Vector2.Add(location, velocity);
 
 
-            //wenn wasserstoff mölkule sicht mit sauerstoff mulekule stoßen sollte wassermölekue entstehen
-            //
-            //
-            //Funktionert nicht**
-            if (sauerstoff.IntersectsWith(wasserstoff))
-            {
-
-                Console.WriteLine("geht doch man ");
-
-            }
 
             
         }
@@ -68,36 +56,31 @@ namespace Chemistry_Assistant.Pages
         /// https://simpledevcode.wordpress.com/2014/08/10/collision-detection-in-c-net-java-example/
         /// </summary>
         //Rectangel um mölekule zu zeichenen
-        RectangleF wasserstoff;
-        RectangleF sauerstoff;
-
+        public RectangleF wasserstoff;
+        public RectangleF sauerstoff;
+        public RectangleF wasser;
         public void OnpaintSauerstoff(Graphics e)
         {
-            
-            
-            //sauerstoff = new Rectangle((int)location.X + 5, (int)location.Y + 5, 10, 10);
 
             sauerstoff.X = location.X;
             sauerstoff.Y = location.Y;
             e.FillEllipse(new SolidBrush(Color.Red), sauerstoff);
-            e.FillEllipse(new SolidBrush(Color.DarkRed), sauerstoff);
 
 
+        }
+        public void OnpaintWasser(Graphics e)
+        {
+
+            wasser.X = location.X;
+            wasser.Y = location.Y;
+            e.FillEllipse(new SolidBrush(Color.Yellow), wasser);
 
         }
         public void OnpaintWasserstoff(Graphics e)
         {
-
-            
-            wasserstoff.X= location.X;
+            wasserstoff.X = location.X;
             wasserstoff.Y = location.Y;
-
-            //wasserstoff = new Rectangle((int)location.X + 5, (int)location.Y + 5, 10, 10);
-
             e.FillEllipse(new SolidBrush(Color.Blue), wasserstoff);
-            e.FillEllipse(new SolidBrush(Color.DarkBlue), wasserstoff);
-
-
         }
 
     }
