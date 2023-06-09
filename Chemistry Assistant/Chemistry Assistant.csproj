@@ -64,6 +64,9 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Buttom.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="DataModule\Datamodule.cs" />
     <Compile Include="Pages\ChemischeReaktion.cs">
       <SubType>Form</SubType>

@@ -30,56 +30,69 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainPage));
             this.SwitchPanel = new System.Windows.Forms.Panel();
-            this.Bt_Rechner = new System.Windows.Forms.Button();
-            this.BT_Pse = new System.Windows.Forms.Button();
             this.MainPanel = new System.Windows.Forms.Panel();
+            this._bt_Pse = new Chemistry_Assistant.Button_WOC();
+            this._bt_Apps = new Chemistry_Assistant.Button_WOC();
             this.SwitchPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // SwitchPanel
             // 
-            this.SwitchPanel.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.SwitchPanel.Controls.Add(this.Bt_Rechner);
-            this.SwitchPanel.Controls.Add(this.BT_Pse);
+            this.SwitchPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(38)))), ((int)(((byte)(59)))));
+            this.SwitchPanel.Controls.Add(this._bt_Apps);
+            this.SwitchPanel.Controls.Add(this._bt_Pse);
             this.SwitchPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.SwitchPanel.Location = new System.Drawing.Point(0, 0);
             this.SwitchPanel.Name = "SwitchPanel";
-            this.SwitchPanel.Size = new System.Drawing.Size(1904, 35);
+            this.SwitchPanel.Size = new System.Drawing.Size(1904, 30);
             this.SwitchPanel.TabIndex = 0;
-            // 
-            // Bt_Rechner
-            // 
-            this.Bt_Rechner.Dock = System.Windows.Forms.DockStyle.Left;
-            this.Bt_Rechner.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.Bt_Rechner.Location = new System.Drawing.Point(128, 0);
-            this.Bt_Rechner.Name = "Bt_Rechner";
-            this.Bt_Rechner.Size = new System.Drawing.Size(142, 35);
-            this.Bt_Rechner.TabIndex = 1;
-            this.Bt_Rechner.Text = "Apps";
-            this.Bt_Rechner.UseVisualStyleBackColor = true;
-            this.Bt_Rechner.Click += new System.EventHandler(this.Bt_Rechner_Click);
-            // 
-            // BT_Pse
-            // 
-            this.BT_Pse.BackColor = System.Drawing.Color.Transparent;
-            this.BT_Pse.Dock = System.Windows.Forms.DockStyle.Left;
-            this.BT_Pse.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BT_Pse.Location = new System.Drawing.Point(0, 0);
-            this.BT_Pse.Name = "BT_Pse";
-            this.BT_Pse.Size = new System.Drawing.Size(128, 35);
-            this.BT_Pse.TabIndex = 0;
-            this.BT_Pse.Text = "Perioden System";
-            this.BT_Pse.UseVisualStyleBackColor = false;
-            this.BT_Pse.Click += new System.EventHandler(this.BT_Pse_Click);
             // 
             // MainPanel
             // 
             this.MainPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.MainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.MainPanel.Location = new System.Drawing.Point(0, 35);
+            this.MainPanel.Location = new System.Drawing.Point(0, 30);
             this.MainPanel.Name = "MainPanel";
-            this.MainPanel.Size = new System.Drawing.Size(1904, 1006);
+            this.MainPanel.Size = new System.Drawing.Size(1904, 1011);
             this.MainPanel.TabIndex = 1;
+            // 
+            // _bt_Pse
+            // 
+            this._bt_Pse.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(141)))), ((int)(((byte)(169)))));
+            this._bt_Pse.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(141)))), ((int)(((byte)(169)))));
+            this._bt_Pse.FlatAppearance.BorderSize = 0;
+            this._bt_Pse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this._bt_Pse.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this._bt_Pse.Location = new System.Drawing.Point(12, 0);
+            this._bt_Pse.Name = "_bt_Pse";
+            this._bt_Pse.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(225)))), ((int)(((byte)(221)))));
+            this._bt_Pse.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(225)))), ((int)(((byte)(221)))));
+            this._bt_Pse.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(27)))), ((int)(((byte)(42)))));
+            this._bt_Pse.Size = new System.Drawing.Size(134, 34);
+            this._bt_Pse.TabIndex = 0;
+            this._bt_Pse.Text = "PSe";
+            this._bt_Pse.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(27)))), ((int)(((byte)(42)))));
+            this._bt_Pse.UseVisualStyleBackColor = true;
+            this._bt_Pse.Click += new System.EventHandler(this.BT_Pse_Click);
+            // 
+            // _bt_Apps
+            // 
+            this._bt_Apps.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(141)))), ((int)(((byte)(169)))));
+            this._bt_Apps.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(141)))), ((int)(((byte)(169)))));
+            this._bt_Apps.FlatAppearance.BorderSize = 0;
+            this._bt_Apps.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this._bt_Apps.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this._bt_Apps.Location = new System.Drawing.Point(152, 0);
+            this._bt_Apps.Name = "_bt_Apps";
+            this._bt_Apps.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(225)))), ((int)(((byte)(221)))));
+            this._bt_Apps.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(225)))), ((int)(((byte)(221)))));
+            this._bt_Apps.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(27)))), ((int)(((byte)(42)))));
+            this._bt_Apps.Size = new System.Drawing.Size(134, 34);
+            this._bt_Apps.TabIndex = 1;
+            this._bt_Apps.Text = "Apps";
+            this._bt_Apps.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(27)))), ((int)(((byte)(42)))));
+            this._bt_Apps.UseVisualStyleBackColor = true;
+            this._bt_Apps.Click += new System.EventHandler(this.Bt_Rechner_Click);
             // 
             // MainPage
             // 
@@ -104,8 +117,8 @@
 
         private System.Windows.Forms.Panel SwitchPanel;
         private System.Windows.Forms.Panel MainPanel;
-        private System.Windows.Forms.Button BT_Pse;
-        private System.Windows.Forms.Button Bt_Rechner;
+        private Button_WOC _bt_Pse;
+        private Button_WOC _bt_Apps;
     }
 }
 
