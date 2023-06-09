@@ -21,11 +21,12 @@ namespace Chemistry_Assistant.Pages
 
 
             location = new Vector2(random.Next(width) - sauerstoff.Width, random.Next(height) - sauerstoff.Height);
-            velocity = new Vector2(1, 1);
+            velocity = new Vector2(2, 2);
 
                 sauerstoff = new RectangleF(location.X, location.Y, 15, 15);
                 wasser = new RectangleF(location.X, location.Y, 15, 15);
-                wasserstoff = new RectangleF(location.X, location.Y, 15, 15);
+                wasserstoff = new RectangleF(location.X, location.Y, 15, 15); 
+                newWasserstoff = new RectangleF(location.X, location.Y, 15, 15);
             
         }
 
@@ -59,29 +60,45 @@ namespace Chemistry_Assistant.Pages
         public RectangleF wasserstoff;
         public RectangleF sauerstoff;
         public RectangleF wasser;
+        public RectangleF newWasserstoff;
         public void OnpaintSauerstoff(Graphics e)
         {
 
+
             sauerstoff.X = location.X;
             sauerstoff.Y = location.Y;
-            e.FillEllipse(new SolidBrush(Color.Red), sauerstoff);
+            //e.FillEllipse(new SolidBrush(Color.Red), sauerstoff);
 
+            e.FillEllipse(Brushes.Red, location.X, location.Y, 15, 15);
+            e.FillEllipse(Brushes.DarkRed, location.X+10, location.Y, 15, 15);
 
         }
         public void OnpaintWasser(Graphics e)
         {
-
             wasser.X = location.X;
             wasser.Y = location.Y;
-            e.FillEllipse(new SolidBrush(Color.Yellow), wasser);
 
+            e.FillEllipse(Brushes.Red, location.X, location.Y, 15, 15);
+            e.FillEllipse(Brushes.Blue, location.X+13, location.Y, 10, 10);
+            e.FillEllipse(Brushes.DarkBlue, location.X -7, location.Y, 10, 10);
         }
         public void OnpaintWasserstoff(Graphics e)
         {
             wasserstoff.X = location.X;
             wasserstoff.Y = location.Y;
-            e.FillEllipse(new SolidBrush(Color.Blue), wasserstoff);
+            e.FillEllipse(Brushes.Blue,location.X,location.Y,15,15);
+            e.FillEllipse(Brushes.DarkBlue,location.X+10,location.Y,15,15);
+            
         }
+
+        public void OnpaintNewSauerstoff(Graphics e)
+        {
+            newWasserstoff.X = location.X;
+            newWasserstoff.Y = location.Y;
+            e.FillEllipse(Brushes.DarkRed, location.X + 10, location.Y, 15, 15);
+
+        }
+
 
     }
 }

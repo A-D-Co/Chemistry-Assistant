@@ -75,9 +75,9 @@ namespace Chemistry_Assistant
         private void Bt_Rechner_Click(object sender, EventArgs e)
         {
             // pse page zugeweist
-            Rechner rechner = new Rechner();
+            Apps apps = new Apps();
             //methode addusercontrill wird wieder gerufen
-            AddUserControll(rechner);
+            AddUserControll(apps);
         }
 
         private void BT_Pse_Click(object sender, EventArgs e)
@@ -87,12 +87,6 @@ namespace Chemistry_Assistant
             //methode addusercontrill wird wieder gerufen
             AddUserControll(pse);
 
-        }
-
-        private void Bt_simulation_Click(object sender, EventArgs e)
-        {
-            simulation simulation= new simulation();
-            AddUserControll(simulation);
         }
     }
 }

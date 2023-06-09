@@ -1,13 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Chemistry_Assistant.Pages
 {
@@ -19,25 +12,26 @@ namespace Chemistry_Assistant.Pages
         }
 
 
-        //Move klasse verärbt
+        // Instanz der Move-Klasse für die Bewegung der Moleküle
         Move move;
 
-        //listen für mölekulen
+        // Listen für verschiedene Moleküle
         List<Move> SauerstoffItems = new List<Move>();
-
         List<Move> WasserstoffItems = new List<Move>();
         List<Move> wasserItems = new List<Move>();
+        List<Move> NewSauerstoff = new List<Move>();
 
-
-        // um Kugel in das Panel zu zeichen 
+        // Panel-Paint-Event, um die Moleküle zu zeichnen
         private void _P_Container_Paint1(object sender, PaintEventArgs e)
         {
 
+            // Aktualisiere die Anzeige der Molekülzahlen
             _lbl_sauerstoff.Text = SauerstoffItems.Count.ToString();
             _lbl_wasserstoff.Text = WasserstoffItems.Count.ToString();
             _lbl_Wasser.Text = wasserItems.Count.ToString();
 
 
+            // Zeichne die Moleküle in den entsprechenden Listen
             foreach (Move item in SauerstoffItems)
             {
                 item.Update();
@@ -54,8 +48,14 @@ namespace Chemistry_Assistant.Pages
                 item.Update();
                 item.OnpaintWasser(e.Graphics);
             }
+            foreach (Move item in NewSauerstoff)
+            {
+                item.Update();
+                item.OnpaintNewSauerstoff(e.Graphics);
+            }
 
 
+            // Überprüfe auf Überlappungen zwischen Sauerstoff- und Wasserstoff-Molekülen
             bool hasOverlap = false;
             List<Move> itemsToRemove = new List<Move>();
 
@@ -75,25 +75,35 @@ namespace Chemistry_Assistant.Pages
                     break;
             }
 
+            // Wenn Überlappungen gefunden wurden
             if (hasOverlap)
             {
+                // Entferne überlappende Moleküle aus den Listen
                 foreach (Move item in itemsToRemove)
                 {
                     SauerstoffItems.Remove(item);
                     WasserstoffItems.Remove(item);
                 }
+                // Füge ein neues Wassermolekül hinzu
                 move = new Move(this._P_Container.Width, this._P_Container.Height);
                 wasserItems.Add(move);
 
+                // Füge neue Sauerstoffmoleküle hinzu, bis die Anzahl 4 erreicht
+                while (SauerstoffItems.Count <= 4)
+                {
+                    move = new Move(this._P_Container.Width, this._P_Container.Height);
+                    SauerstoffItems.Add(move);
 
-                move = new Move(this._P_Container.Width, this._P_Container.Height);
-                SauerstoffItems.Add(move);
+                }
+
+
+
             }
 
         }
 
 
-        //werden von panel gelöscht
+        // Lösche das letzte Element aus der gegebenen Liste von Molekülen
         private void Delete(List<Move> moves)
         {
             if (moves.Count > 0)
@@ -104,58 +114,61 @@ namespace Chemistry_Assistant.Pages
         }
 
 
-        //panel jedes mal updaten
+        // Timer-Event-Handler zum Aktualisieren des Panels
         private void Timer_Tick(object sender, EventArgs e)
         {
             this._P_Container.Invalidate();
 
         }
 
-
-
-        //wenn benutzer es scrollt wirden mölekule gespawnt oder gelöscht
+        // Event-Handler für den Scroll des Sauerstoff-Schiebereglers
         private int lastvalue;
         private void _Trb_Sauerstoff_Scroll(object sender, EventArgs e)
         {
             int change = _Trb_Sauerstoff.Value - lastvalue;
             if (change > 0)
             {
+                // Inkrementiere die Anzahl der Sauerstoff-Moleküle
                 move = new Move(this._P_Container.Width, this._P_Container.Height);
                 this.SauerstoffItems.Add(move);
             }
             else if (change < 0)
             {
-                //decreasing
+                // Dekrementiere die Anzahl der Sauerstoff-Moleküle
                 Delete(SauerstoffItems);
             }
             lastvalue = _Trb_Sauerstoff.Value;
+            _lbl_sauerstoff_zustand.Text = _Trb_Sauerstoff.Value.ToString();
         }
 
+        // Event-Handler für den Scroll des Wasserstoff-Schiebereglers
         private int _lastvalue;
         private void _Trb_Wasserstoff_Scroll(object sender, EventArgs e)
         {
+
             int change = _Trb_Wasserstoff.Value - _lastvalue;
             if (change > 0)
             {
+                // Inkrementiere die Anzahl der Wasserstoff-Moleküle
                 move = new Move(this._P_Container.Width, this._P_Container.Height);
                 WasserstoffItems.Add(move);
             }
             else if (change < 0)
             {
-                //decreasing
+                // Dekrementiere die Anzahl der Wasserstoff-Moleküle
                 Delete(WasserstoffItems);
             }
             _lastvalue = _Trb_Wasserstoff.Value;
-            
+            _lbl_Wasserstoff_zustand.Text = _Trb_Wasserstoff.Value.ToString();
         }
 
-
-        //wenn der page lädt
+        // Event-Handler beim Laden des Formulars
         private void ChemischeReaktion_Load(object sender, EventArgs e)
         {
-            //this.DoubleBuffered = true;
+            // Initialisiere und starte den Timer für das Panel-Update
+            this.DoubleBuffered = true;
             Timer timer = new Timer();
-            timer.Interval = 10;
+            timer.Interval = 1;
             timer.Tick += Timer_Tick;
             timer.Start();
         }

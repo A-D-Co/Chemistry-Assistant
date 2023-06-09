@@ -1,24 +1,27 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Chemistry_Assistant
+namespace Chemistry_Assistant.Pages
 {
-    public partial class Rechner : UserControl
+    public partial class MolareMasse : Form
     {
-        public Rechner()
+        public MolareMasse()
         {
             InitializeComponent();
         }
-
-
         private double molare = 0;
         private double mol = 0;
         private double molmasse = 0;
 
-
         private void Molaremasse()
         {
-
 
             #region v2
             string formula = Tb_Formel.Text;
@@ -44,15 +47,12 @@ namespace Chemistry_Assistant
                         element += formula[i + 1];
                         //im daten bank suchen
                         molare += GetElementMass(element);
-
                     }
                     //sonst das Element in Datenbank suchen
                     else
                     {
                         molare += GetElementMass(formula[i].ToString());
                     }
-
-
                 }
                 //chenken ob sich um zahl handelt 
                 if (i + 1 < formula.Length && char.IsDigit(formula[i + 1]))
@@ -64,21 +64,34 @@ namespace Chemistry_Assistant
                     molare = molare * temp;
 
                 }
-
             }
-
-            
             // Das molare molmasse eingeben 
             TB_MolareMass.Text = molare.ToString();
 
             #endregion
         }
 
+
+
+        private void Rechnen()
+        {
+            Molaremasse();
+            mol = Convert.ToDouble(TB_Mol.Text);
+
+
+            mol = molare * mol;
+            mol = Math.Round(mol, 3);
+            TB_Masse.Text = mol.ToString();
+
+            molmasse = Convert.ToDouble(TB_Masse.Text);
+            mol = molmasse / molare;
+            mol = Math.Round(mol, 3);
+            TB_Mol.Text = mol.ToString();
+        }
         static double GetElementMass(string symbol)
         {
             // auf datamodule im Mainpage zuweisen
             Datamodule data = MainPage.DM;
-
 
             //Das SelectElement löschen 
             data.RemoveTable(ref data.ds, "SelectElement");
@@ -91,7 +104,7 @@ namespace Chemistry_Assistant
             //die autom molmasse von tabelle holen
             string AtomMasse = data.ds.Tables["SelectElement"].Rows[0][0].ToString();
 
-            
+
 
             //checken wenn im tabelle punkt ist wird ersetzt zum komma
             if (AtomMasse.IndexOf('.') != -1)
@@ -99,38 +112,15 @@ namespace Chemistry_Assistant
                 AtomMasse = AtomMasse.Replace('.', ',');
             }
 
-
             double mass = Convert.ToDouble(AtomMasse);
             return mass;
 
         }
-
-
-        private void Rechnen()
-        {
-            Molaremasse();
-            mol = Convert.ToDouble(TB_Mol.Text);
-            molmasse = Convert.ToDouble(TB_Masse.Text);
-
-            mol = molare * mol;
-            mol = Math.Round(mol, 3);
-            TB_Masse.Text = mol.ToString();
-
-
-
-            mol = molmasse / molare;
-            mol = Math.Round(mol, 3);
-            TB_Mol.Text = mol.ToString();
-
-        }
-
-
         private void BT_Rechnen_Click(object sender, EventArgs e)
         {
             Rechnen();
 
         }
+
     }
-
-
 }
