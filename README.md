@@ -6,7 +6,7 @@ Dies ist ein Schulprojekt, das darauf abzielt, einen Chemie-Assistenten zu erste
 ## Installation 
 Zuerst müssen Sie Firebird SQL installieren, da dieses Projekt den Firebird-Server verwendet und darauf basiert. Sie können Firebird 4.0 oder eine neuere Version installieren. Klicken Sie [hier](https://firebirdsql.org/en/server-packages/), um mit der Installation zu beginnen.
 
-### First setp
+### First step
 Zuerst müssen Sie die Datei MainPage.cs öffnen und die Methode "ConnectToDatenbank" finden. In dieser Methode können Sie den Benutzernamen, das Passwort, den Datenbankpfad, den Servernamen und den Port konfigurieren. Wenn Sie alle Einstellungen auf die Standardwerte belassen möchten, können Sie dies tun.
 - benutzername: SYSDBA
 - Passwort: masterkey
