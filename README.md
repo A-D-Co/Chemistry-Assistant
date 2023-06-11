@@ -6,5 +6,7 @@ tool that will enable them to explore and understand various chemical concepts m
 including atomic number, mass, and electronegativity. They will also be able to perform calculations such as molarity, molality, and percent composition, among others. The overall goal of this project is to make 
 chemistry more accessible and engaging for students, helping them to develop a deeper understanding of the subject.
 
-# Install
+## installations
+First you need to install FireBird 4.0 you can Downloand Firebird [hier]([http://domain.de](https://firebirdsql.org/en/server-packages/))
+
 
