@@ -7,6 +7,6 @@ including atomic number, mass, and electronegativity. They will also be able to 
 chemistry more accessible and engaging for students, helping them to develop a deeper understanding of the subject.
 
 ## installations
-First you need to install FireBird 4.0 you can Downloand Firebird [hier]([http://domain.de](https://firebirdsql.org/en/server-packages/))
+First you need to install FireBird 4.0 you can Downloand Firebird [hier](http://domain.de](https://firebirdsql.org/en/server-packages/)
 
 
