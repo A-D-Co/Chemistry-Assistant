@@ -36,13 +36,13 @@
             this.TB_Mol = new System.Windows.Forms.TextBox();
             this.L_Mol = new System.Windows.Forms.Label();
             this.L_Formel = new System.Windows.Forms.Label();
-            this.BT_Rechnen = new System.Windows.Forms.Button();
             this.Tb_Formel = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.BT_Rechnen = new Chemistry_Assistant.Button_WOC();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -123,17 +123,6 @@
             this.L_Formel.TabIndex = 14;
             this.L_Formel.Text = "Formel";
             // 
-            // BT_Rechnen
-            // 
-            this.BT_Rechnen.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BT_Rechnen.Location = new System.Drawing.Point(332, 400);
-            this.BT_Rechnen.Name = "BT_Rechnen";
-            this.BT_Rechnen.Size = new System.Drawing.Size(129, 38);
-            this.BT_Rechnen.TabIndex = 13;
-            this.BT_Rechnen.Text = "Rechnen";
-            this.BT_Rechnen.UseVisualStyleBackColor = true;
-            this.BT_Rechnen.Click += new System.EventHandler(this.BT_Rechnen_Click);
-            // 
             // Tb_Formel
             // 
             this.Tb_Formel.Location = new System.Drawing.Point(169, 26);
@@ -179,16 +168,6 @@
             this.panel2.Size = new System.Drawing.Size(771, 237);
             this.panel2.TabIndex = 24;
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(6, 20);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(97, 20);
-            this.label4.TabIndex = 21;
-            this.label4.Text = "Stoffmenge:";
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -199,16 +178,48 @@
             this.label5.TabIndex = 22;
             this.label5.Text = "Masse:";
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(6, 20);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(97, 20);
+            this.label4.TabIndex = 21;
+            this.label4.Text = "Stoffmenge:";
+            // 
+            // BT_Rechnen
+            // 
+            this.BT_Rechnen.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(141)))), ((int)(((byte)(169)))));
+            this.BT_Rechnen.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(141)))), ((int)(((byte)(169)))));
+            this.BT_Rechnen.FlatAppearance.BorderSize = 0;
+            this.BT_Rechnen.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(225)))), ((int)(((byte)(221)))));
+            this.BT_Rechnen.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(225)))), ((int)(((byte)(221)))));
+            this.BT_Rechnen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BT_Rechnen.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BT_Rechnen.Location = new System.Drawing.Point(330, 400);
+            this.BT_Rechnen.Name = "BT_Rechnen";
+            this.BT_Rechnen.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(141)))), ((int)(((byte)(169)))));
+            this.BT_Rechnen.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(225)))), ((int)(((byte)(221)))));
+            this.BT_Rechnen.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(27)))), ((int)(((byte)(42)))));
+            this.BT_Rechnen.Size = new System.Drawing.Size(121, 41);
+            this.BT_Rechnen.TabIndex = 25;
+            this.BT_Rechnen.Text = "Apps";
+            this.BT_Rechnen.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(27)))), ((int)(((byte)(42)))));
+            this.BT_Rechnen.UseVisualStyleBackColor = true;
+            this.BT_Rechnen.Click += new System.EventHandler(this.BT_Rechnen_Click);
+            // 
             // MolareMasse
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(225)))), ((int)(((byte)(221)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.BT_Rechnen);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.BT_Rechnen);
             this.Name = "MolareMasse";
             this.Text = "MolareMasse";
             this.panel1.ResumeLayout(false);
@@ -230,12 +241,12 @@
         private System.Windows.Forms.TextBox TB_Mol;
         private System.Windows.Forms.Label L_Mol;
         private System.Windows.Forms.Label L_Formel;
-        private System.Windows.Forms.Button BT_Rechnen;
         private System.Windows.Forms.TextBox Tb_Formel;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
+        private Button_WOC BT_Rechnen;
     }
 }

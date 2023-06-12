@@ -30,9 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainPage));
             this.SwitchPanel = new System.Windows.Forms.Panel();
-            this.MainPanel = new System.Windows.Forms.Panel();
-            this._bt_Pse = new Chemistry_Assistant.Button_WOC();
             this._bt_Apps = new Chemistry_Assistant.Button_WOC();
+            this._bt_Pse = new Chemistry_Assistant.Button_WOC();
+            this.MainPanel = new System.Windows.Forms.Panel();
             this.SwitchPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -44,26 +44,40 @@
             this.SwitchPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.SwitchPanel.Location = new System.Drawing.Point(0, 0);
             this.SwitchPanel.Name = "SwitchPanel";
-            this.SwitchPanel.Size = new System.Drawing.Size(1904, 30);
+            this.SwitchPanel.Size = new System.Drawing.Size(1904, 43);
             this.SwitchPanel.TabIndex = 0;
             // 
-            // MainPanel
+            // _bt_Apps
             // 
-            this.MainPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.MainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.MainPanel.Location = new System.Drawing.Point(0, 30);
-            this.MainPanel.Name = "MainPanel";
-            this.MainPanel.Size = new System.Drawing.Size(1904, 1011);
-            this.MainPanel.TabIndex = 1;
+            this._bt_Apps.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(141)))), ((int)(((byte)(169)))));
+            this._bt_Apps.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(141)))), ((int)(((byte)(169)))));
+            this._bt_Apps.FlatAppearance.BorderSize = 0;
+            this._bt_Apps.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(38)))), ((int)(((byte)(59)))));
+            this._bt_Apps.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(38)))), ((int)(((byte)(59)))));
+            this._bt_Apps.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this._bt_Apps.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this._bt_Apps.Location = new System.Drawing.Point(143, 3);
+            this._bt_Apps.Name = "_bt_Apps";
+            this._bt_Apps.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(225)))), ((int)(((byte)(221)))));
+            this._bt_Apps.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(225)))), ((int)(((byte)(221)))));
+            this._bt_Apps.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(27)))), ((int)(((byte)(42)))));
+            this._bt_Apps.Size = new System.Drawing.Size(134, 34);
+            this._bt_Apps.TabIndex = 1;
+            this._bt_Apps.Text = "Apps";
+            this._bt_Apps.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(27)))), ((int)(((byte)(42)))));
+            this._bt_Apps.UseVisualStyleBackColor = true;
+            this._bt_Apps.Click += new System.EventHandler(this.Bt_Rechner_Click);
             // 
             // _bt_Pse
             // 
             this._bt_Pse.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(141)))), ((int)(((byte)(169)))));
             this._bt_Pse.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(141)))), ((int)(((byte)(169)))));
             this._bt_Pse.FlatAppearance.BorderSize = 0;
+            this._bt_Pse.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(38)))), ((int)(((byte)(59)))));
+            this._bt_Pse.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(38)))), ((int)(((byte)(59)))));
             this._bt_Pse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this._bt_Pse.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._bt_Pse.Location = new System.Drawing.Point(12, 0);
+            this._bt_Pse.Location = new System.Drawing.Point(3, 3);
             this._bt_Pse.Name = "_bt_Pse";
             this._bt_Pse.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(225)))), ((int)(((byte)(221)))));
             this._bt_Pse.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(225)))), ((int)(((byte)(221)))));
@@ -75,24 +89,14 @@
             this._bt_Pse.UseVisualStyleBackColor = true;
             this._bt_Pse.Click += new System.EventHandler(this.BT_Pse_Click);
             // 
-            // _bt_Apps
+            // MainPanel
             // 
-            this._bt_Apps.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(141)))), ((int)(((byte)(169)))));
-            this._bt_Apps.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(141)))), ((int)(((byte)(169)))));
-            this._bt_Apps.FlatAppearance.BorderSize = 0;
-            this._bt_Apps.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this._bt_Apps.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._bt_Apps.Location = new System.Drawing.Point(152, 0);
-            this._bt_Apps.Name = "_bt_Apps";
-            this._bt_Apps.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(225)))), ((int)(((byte)(221)))));
-            this._bt_Apps.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(225)))), ((int)(((byte)(221)))));
-            this._bt_Apps.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(27)))), ((int)(((byte)(42)))));
-            this._bt_Apps.Size = new System.Drawing.Size(134, 34);
-            this._bt_Apps.TabIndex = 1;
-            this._bt_Apps.Text = "Apps";
-            this._bt_Apps.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(27)))), ((int)(((byte)(42)))));
-            this._bt_Apps.UseVisualStyleBackColor = true;
-            this._bt_Apps.Click += new System.EventHandler(this.Bt_Rechner_Click);
+            this.MainPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.MainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MainPanel.Location = new System.Drawing.Point(0, 43);
+            this.MainPanel.Name = "MainPanel";
+            this.MainPanel.Size = new System.Drawing.Size(1904, 998);
+            this.MainPanel.TabIndex = 1;
             // 
             // MainPage
             // 

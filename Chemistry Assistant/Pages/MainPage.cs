@@ -48,11 +48,12 @@ namespace Chemistry_Assistant
         {
                 try
                 {
-                    DM = new Datamodule("SYSDBA",
-                                   "Diyar1010",
-                                   @"F:\Chemistry Assistant\Chemistry Assistant\Datenbank\CHEMISTRY_ASSISTANT.FDB",
-                                   "localhost",
-                                   3050
+                    DM = new Datamodule(
+                        /*Benutzername*/   "SYSDBA",
+                        /*Passwort*/       "Diyar1010",
+                        /*Datenbank Path*/ @"F:\Chemistry Assistant\Chemistry Assistant\Datenbank\CHEMISTRY_ASSISTANT.FDB",
+                        /*Servername*/     "localhost",
+                        /*Port*/           3050
                                    );
 
                 }

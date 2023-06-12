@@ -209,6 +209,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(225)))), ((int)(((byte)(221)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this._lbl_sauerstoff_zustand);
             this.Controls.Add(this._lbl_Wasserstoff_zustand);
