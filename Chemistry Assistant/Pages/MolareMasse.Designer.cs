@@ -136,9 +136,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(12, 34);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(411, 25);
+            this.label1.Size = new System.Drawing.Size(405, 25);
             this.label1.TabIndex = 22;
-            this.label1.Text = " und klicken Sie auf die Berechnen Taste ";
+            this.label1.Text = "und klicken Sie auf die Berechnen Taste ";
             // 
             // panel1
             // 
@@ -197,7 +197,7 @@
             this.BT_Rechnen.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(225)))), ((int)(((byte)(221)))));
             this.BT_Rechnen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BT_Rechnen.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BT_Rechnen.Location = new System.Drawing.Point(330, 400);
+            this.BT_Rechnen.Location = new System.Drawing.Point(332, 400);
             this.BT_Rechnen.Name = "BT_Rechnen";
             this.BT_Rechnen.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(141)))), ((int)(((byte)(169)))));
             this.BT_Rechnen.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(225)))), ((int)(((byte)(221)))));

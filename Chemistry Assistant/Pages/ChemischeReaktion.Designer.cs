@@ -44,6 +44,8 @@
             this.label7 = new System.Windows.Forms.Label();
             this._lbl_Wasserstoff_zustand = new System.Windows.Forms.Label();
             this._lbl_sauerstoff_zustand = new System.Windows.Forms.Label();
+            this._lbl_Vollstaedige = new System.Windows.Forms.Label();
+            this._P_Container.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this._Trb_Sauerstoff)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._Trb_Wasserstoff)).BeginInit();
             this.SuspendLayout();
@@ -51,6 +53,7 @@
             // _P_Container
             // 
             this._P_Container.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this._P_Container.Controls.Add(this._lbl_Vollstaedige);
             this._P_Container.Location = new System.Drawing.Point(12, 39);
             this._P_Container.Name = "_P_Container";
             this._P_Container.Size = new System.Drawing.Size(324, 399);
@@ -205,6 +208,17 @@
             this._lbl_sauerstoff_zustand.TabIndex = 15;
             this._lbl_sauerstoff_zustand.Text = "0";
             // 
+            // _lbl_Vollstaedige
+            // 
+            this._lbl_Vollstaedige.AutoSize = true;
+            this._lbl_Vollstaedige.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this._lbl_Vollstaedige.Location = new System.Drawing.Point(49, 190);
+            this._lbl_Vollstaedige.Name = "_lbl_Vollstaedige";
+            this._lbl_Vollstaedige.Size = new System.Drawing.Size(212, 25);
+            this._lbl_Vollstaedige.TabIndex = 16;
+            this._lbl_Vollstaedige.Text = "Vollständige zustand";
+            this._lbl_Vollstaedige.Visible = false;
+            // 
             // ChemischeReaktion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -230,6 +244,8 @@
             this.Name = "ChemischeReaktion";
             this.Text = "ChemischeReaktion";
             this.Load += new System.EventHandler(this.ChemischeReaktion_Load);
+            this._P_Container.ResumeLayout(false);
+            this._P_Container.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this._Trb_Sauerstoff)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this._Trb_Wasserstoff)).EndInit();
             this.ResumeLayout(false);
@@ -255,5 +271,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label _lbl_Wasserstoff_zustand;
         private System.Windows.Forms.Label _lbl_sauerstoff_zustand;
+        private System.Windows.Forms.Label _lbl_Vollstaedige;
     }
 }

@@ -9,6 +9,8 @@ namespace Chemistry_Assistant.Pages
         public ChemischeReaktion()
         {
             InitializeComponent();
+
+
         }
 
 
@@ -98,6 +100,12 @@ namespace Chemistry_Assistant.Pages
 
 
 
+            }
+
+
+            if(SauerstoffItems.Count >=4 && wasserItems.Count >= 10)
+            {
+                _lbl_Vollstaedige.Visible = true;
             }
 
         }
