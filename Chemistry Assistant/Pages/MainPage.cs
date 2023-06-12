@@ -50,7 +50,7 @@ namespace Chemistry_Assistant
                 {
                     DM = new Datamodule("SYSDBA",
                                    "Diyar1010",
-                                   @"C:\Users\Diyar\source\repos\Chemistry-Assistant\Chemistry Assistant\Datenbank\CHEMISTRY_ASSISTANT.FDB",
+                                   @"F:\Chemistry Assistant\Chemistry Assistant\Datenbank\CHEMISTRY_ASSISTANT.FDB",
                                    "localhost",
                                    3050
                                    );
