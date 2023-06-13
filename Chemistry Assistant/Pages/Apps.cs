@@ -11,7 +11,7 @@ namespace Chemistry_Assistant
             InitializeComponent();
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void Pb_Simulation_Click(object sender, EventArgs e)
         {
 
             ChemischeReaktion chemischeReaktion = new ChemischeReaktion();
@@ -19,7 +19,7 @@ namespace Chemistry_Assistant
 
         }
 
-        private void pictureBox2_Click(object sender, EventArgs e)
+        private void Pb_Rechnen_Click(object sender, EventArgs e)
         {
             MolareMasse molare = new MolareMasse();
             molare.Show();

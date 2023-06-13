@@ -23,7 +23,6 @@ namespace Chemistry_Assistant.Pages
         private void Molaremasse()
         {
 
-            #region v2
             string formula = Tb_Formel.Text;
             string element = "";
             molare = 0;
@@ -67,8 +66,6 @@ namespace Chemistry_Assistant.Pages
             }
             // Das molare molmasse eingeben 
             TB_MolareMass.Text = molare.ToString();
-
-            #endregion
         }
 
 
@@ -78,8 +75,7 @@ namespace Chemistry_Assistant.Pages
             Molaremasse();
             mol = Convert.ToDouble(TB_Mol.Text);
 
-
-            mol = molare * mol;
+            mol *= molare ;
             mol = Math.Round(mol, 3);
             TB_Masse.Text = mol.ToString();
 
@@ -119,7 +115,6 @@ namespace Chemistry_Assistant.Pages
         private void BT_Rechnen_Click(object sender, EventArgs e)
         {
             Rechnen();
-
         }
 
     }

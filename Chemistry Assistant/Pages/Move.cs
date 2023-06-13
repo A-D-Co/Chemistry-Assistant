@@ -6,7 +6,7 @@ namespace Chemistry_Assistant.Pages
 {
     class Move
     {
-        static Random random = new Random();
+        Random random = new Random();
 
         Vector2 location;
         Vector2 velocity;
@@ -26,7 +26,6 @@ namespace Chemistry_Assistant.Pages
                 sauerstoff = new RectangleF(location.X, location.Y, 15, 15);
                 wasser = new RectangleF(location.X, location.Y, 15, 15);
                 wasserstoff = new RectangleF(location.X, location.Y, 15, 15); 
-                newWasserstoff = new RectangleF(location.X, location.Y, 15, 15);
             
         }
 
@@ -46,11 +45,7 @@ namespace Chemistry_Assistant.Pages
             }
 
             //sonst beweget sicht auf der seite der sich stoßt
-            location = Vector2.Add(location, velocity);
-
-
-
-            
+            location = Vector2.Add(location, velocity);      
         }
 
         /// <summary>
@@ -60,7 +55,6 @@ namespace Chemistry_Assistant.Pages
         public RectangleF wasserstoff;
         public RectangleF sauerstoff;
         public RectangleF wasser;
-        public RectangleF newWasserstoff;
         public void OnpaintSauerstoff(Graphics e)
         {
 
@@ -90,15 +84,6 @@ namespace Chemistry_Assistant.Pages
             e.FillEllipse(Brushes.DarkBlue,location.X+10,location.Y,15,15);
             
         }
-
-        public void OnpaintNewSauerstoff(Graphics e)
-        {
-            newWasserstoff.X = location.X;
-            newWasserstoff.Y = location.Y;
-            e.FillEllipse(Brushes.DarkRed, location.X + 10, location.Y, 15, 15);
-
-        }
-
 
     }
 }

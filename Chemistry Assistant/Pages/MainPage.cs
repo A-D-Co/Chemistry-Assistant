@@ -19,13 +19,6 @@ namespace Chemistry_Assistant
 
         }
 
-
-
-
-
-
-        public static Datamodule DM;
-
         // quelle https://www.youtube.com/watch?v=ILGUQBFjZUk
         public void AddUserControll(UserControl userControll)
         {
@@ -42,8 +35,9 @@ namespace Chemistry_Assistant
 
             
         }
-        
 
+
+        public static Datamodule DM;
         public void ConnectToDatabank()
         {
                 try
@@ -55,25 +49,18 @@ namespace Chemistry_Assistant
                         /*Servername*/     "localhost",
                         /*Port*/           3050
                                    );
-
                 }
                 catch(Exception ex)
                 {
-
                     MessageBox.Show("Datenbank kann nicht geöffnet werden allllloooo verpiss dich " + ex.Message);
-
                 }
-
-
-
             //das loaddata2 aufrufne damit er auf datenbank zu greift und und selcet command ausfüht
             string sqlCommnad = "SELECT * FROM T_ELEMENTE_EIGENSCHAFT order by id ; ";
             DM.LoadData2Table(sqlCommnad, "ElementTable");
 
-
         }
 
-        private void Bt_Rechner_Click(object sender, EventArgs e)
+        private void Bt_Apps_Click(object sender, EventArgs e)
         {
             // pse page zugeweist
             Apps apps = new Apps();

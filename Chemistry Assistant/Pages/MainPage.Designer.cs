@@ -66,7 +66,7 @@
             this._bt_Apps.Text = "Apps";
             this._bt_Apps.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(27)))), ((int)(((byte)(42)))));
             this._bt_Apps.UseVisualStyleBackColor = true;
-            this._bt_Apps.Click += new System.EventHandler(this.Bt_Rechner_Click);
+            this._bt_Apps.Click += new System.EventHandler(this.Bt_Apps_Click);
             // 
             // _bt_Pse
             // 

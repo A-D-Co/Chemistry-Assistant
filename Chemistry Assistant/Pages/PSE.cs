@@ -507,7 +507,5 @@ namespace Chemistry_Assistant
             EigenschaftenWindow(118);
         }
 
-
-
     }
 }

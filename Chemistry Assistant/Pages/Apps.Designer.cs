@@ -34,10 +34,10 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.Pb_Rechnen = new System.Windows.Forms.PictureBox();
+            this.Pb_Simulation = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.Pb_Rechnen)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Pb_Simulation)).BeginInit();
             this.SuspendLayout();
             // 
             // contextMenuStrip1
@@ -65,42 +65,42 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Chemische Reaktion";
             // 
-            // pictureBox2
+            // Pb_Rechnen
             // 
-            this.pictureBox2.Image = global::Chemistry_Assistant.Properties.Resources.Calculator_PNG_Clipart;
-            this.pictureBox2.Location = new System.Drawing.Point(68, 70);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(240, 227);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 4;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            this.Pb_Rechnen.Image = global::Chemistry_Assistant.Properties.Resources.Calculator_PNG_Clipart;
+            this.Pb_Rechnen.Location = new System.Drawing.Point(68, 70);
+            this.Pb_Rechnen.Name = "Pb_Rechnen";
+            this.Pb_Rechnen.Size = new System.Drawing.Size(240, 227);
+            this.Pb_Rechnen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Pb_Rechnen.TabIndex = 4;
+            this.Pb_Rechnen.TabStop = false;
+            this.Pb_Rechnen.Click += new System.EventHandler(this.Pb_Rechnen_Click);
             // 
-            // pictureBox1
+            // Pb_Simulation
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(381, 70);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(240, 227);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.Pb_Simulation.BackColor = System.Drawing.Color.Transparent;
+            this.Pb_Simulation.Image = ((System.Drawing.Image)(resources.GetObject("Pb_Simulation.Image")));
+            this.Pb_Simulation.Location = new System.Drawing.Point(381, 70);
+            this.Pb_Simulation.Name = "Pb_Simulation";
+            this.Pb_Simulation.Size = new System.Drawing.Size(240, 227);
+            this.Pb_Simulation.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Pb_Simulation.TabIndex = 2;
+            this.Pb_Simulation.TabStop = false;
+            this.Pb_Simulation.Click += new System.EventHandler(this.Pb_Simulation_Click);
             // 
             // Apps
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(225)))), ((int)(((byte)(221)))));
-            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.Pb_Rechnen);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.Pb_Simulation);
             this.Controls.Add(this.label1);
             this.Name = "Apps";
             this.Size = new System.Drawing.Size(1920, 1080);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Pb_Rechnen)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Pb_Simulation)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -110,7 +110,7 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox Pb_Simulation;
+        private System.Windows.Forms.PictureBox Pb_Rechnen;
     }
 }

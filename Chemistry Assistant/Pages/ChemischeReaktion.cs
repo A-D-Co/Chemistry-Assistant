@@ -21,7 +21,6 @@ namespace Chemistry_Assistant.Pages
         List<Move> SauerstoffItems = new List<Move>();
         List<Move> WasserstoffItems = new List<Move>();
         List<Move> wasserItems = new List<Move>();
-        List<Move> NewSauerstoff = new List<Move>();
 
         // Panel-Paint-Event, um die Moleküle zu zeichnen
         private void _P_Container_Paint1(object sender, PaintEventArgs e)
@@ -50,11 +49,7 @@ namespace Chemistry_Assistant.Pages
                 item.Update();
                 item.OnpaintWasser(e.Graphics);
             }
-            foreach (Move item in NewSauerstoff)
-            {
-                item.Update();
-                item.OnpaintNewSauerstoff(e.Graphics);
-            }
+
 
 
             // Überprüfe auf Überlappungen zwischen Sauerstoff- und Wasserstoff-Molekülen
