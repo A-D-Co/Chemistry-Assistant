@@ -190,6 +190,7 @@
             this.label36 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label37 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.PT_Lithium)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PT_Wasserstoff)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._Pt_Kalium)).BeginInit();
@@ -314,6 +315,7 @@
             ((System.ComponentModel.ISupportInitialize)(this._PT_Lutetium)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox30)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // PT_Lithium
@@ -1254,7 +1256,7 @@
             // 
             // _PT_Flerovium
             // 
-            this._PT_Flerovium.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(196)))), ((int)(((byte)(147)))));
+            this._PT_Flerovium.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(136)))), ((int)(((byte)(125)))));
             this._PT_Flerovium.Image = ((System.Drawing.Image)(resources.GetObject("_PT_Flerovium.Image")));
             this._PT_Flerovium.Location = new System.Drawing.Point(1383, 668);
             this._PT_Flerovium.Name = "_PT_Flerovium";
@@ -1350,7 +1352,7 @@
             // 
             // _PT_Polonium
             // 
-            this._PT_Polonium.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(136)))), ((int)(((byte)(125)))));
+            this._PT_Polonium.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(187)))), ((int)(((byte)(180)))));
             this._PT_Polonium.Image = ((System.Drawing.Image)(resources.GetObject("_PT_Polonium.Image")));
             this._PT_Polonium.Location = new System.Drawing.Point(1575, 563);
             this._PT_Polonium.Name = "_PT_Polonium";
@@ -1673,7 +1675,7 @@
             // 
             // _PT_Livermorium
             // 
-            this._PT_Livermorium.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(196)))), ((int)(((byte)(147)))));
+            this._PT_Livermorium.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(136)))), ((int)(((byte)(125)))));
             this._PT_Livermorium.Image = ((System.Drawing.Image)(resources.GetObject("_PT_Livermorium.Image")));
             this._PT_Livermorium.Location = new System.Drawing.Point(1575, 668);
             this._PT_Livermorium.Name = "_PT_Livermorium";
@@ -1733,7 +1735,7 @@
             // 
             // _PT_Helium
             // 
-            this._PT_Helium.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(228)))), ((int)(((byte)(240)))));
+            this._PT_Helium.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(198)))), ((int)(((byte)(211)))));
             this._PT_Helium.Image = ((System.Drawing.Image)(resources.GetObject("_PT_Helium.Image")));
             this._PT_Helium.Location = new System.Drawing.Point(1765, 38);
             this._PT_Helium.Name = "_PT_Helium";
@@ -2181,11 +2183,23 @@
             this.label37.TabIndex = 212;
             this.label37.Text = "Hauptgruppen";
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(682, 119);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(597, 179);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox2.TabIndex = 213;
+            this.pictureBox2.TabStop = false;
+            // 
             // PSE
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(225)))), ((int)(((byte)(221)))));
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.label37);
             this.Controls.Add(this.label36);
             this.Controls.Add(this.label35);
@@ -2473,6 +2487,7 @@
             ((System.ComponentModel.ISupportInitialize)(this._PT_Lutetium)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox30)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2640,5 +2655,6 @@
         private System.Windows.Forms.Label label36;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
