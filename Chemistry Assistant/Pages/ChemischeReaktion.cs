@@ -13,7 +13,6 @@ namespace Chemistry_Assistant.Pages
 
         }
 
-
         // Instanz der Move-Klasse für die Bewegung der Moleküle
         Move move;
 
@@ -25,12 +24,10 @@ namespace Chemistry_Assistant.Pages
         // Panel-Paint-Event, um die Moleküle zu zeichnen
         private void _P_Container_Paint1(object sender, PaintEventArgs e)
         {
-
             // Aktualisiere die Anzeige der Molekülzahlen
             _lbl_sauerstoff.Text = SauerstoffItems.Count.ToString();
             _lbl_wasserstoff.Text = WasserstoffItems.Count.ToString();
             _lbl_Wasser.Text = wasserItems.Count.ToString();
-
 
             // Zeichne die Moleküle in den entsprechenden Listen
             foreach (Move item in SauerstoffItems)
@@ -49,8 +46,6 @@ namespace Chemistry_Assistant.Pages
                 item.Update();
                 item.OnpaintWasser(e.Graphics);
             }
-
-
 
             // Überprüfe auf Überlappungen zwischen Sauerstoff- und Wasserstoff-Molekülen
             bool hasOverlap = false;
@@ -71,7 +66,6 @@ namespace Chemistry_Assistant.Pages
                 if (hasOverlap)
                     break;
             }
-
             // Wenn Überlappungen gefunden wurden
             if (hasOverlap)
             {
@@ -90,21 +84,14 @@ namespace Chemistry_Assistant.Pages
                 {
                     move = new Move(this._P_Container.Width, this._P_Container.Height);
                     SauerstoffItems.Add(move);
-
                 }
-
-
-
             }
-
-
             if(SauerstoffItems.Count >=4 && wasserItems.Count >= 10)
             {
                 _lbl_Vollstaedige.Visible = true;
             }
 
         }
-
 
         // Lösche das letzte Element aus der gegebenen Liste von Molekülen
         private void Delete(List<Move> moves)

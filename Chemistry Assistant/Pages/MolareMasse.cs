@@ -22,7 +22,6 @@ namespace Chemistry_Assistant.Pages
 
         private void Molaremasse()
         {
-
             string formula = Tb_Formel.Text;
             string element = "";
             molare = 0;
@@ -56,12 +55,10 @@ namespace Chemistry_Assistant.Pages
                 //chenken ob sich um zahl handelt 
                 if (i + 1 < formula.Length && char.IsDigit(formula[i + 1]))
                 {
-
                     //https://www.techiedelight.com/convert-char-to-int-csharp/
                     //Char zu int Conventern 
                     temp = (int)Char.GetNumericValue(formula[i + 1]);
                     molare = molare * temp;
-
                 }
             }
             // Das molare molmasse eingeben 
@@ -99,8 +96,6 @@ namespace Chemistry_Assistant.Pages
 
             //die autom molmasse von tabelle holen
             string AtomMasse = data.ds.Tables["SelectElement"].Rows[0][0].ToString();
-
-
 
             //checken wenn im tabelle punkt ist wird ersetzt zum komma
             if (AtomMasse.IndexOf('.') != -1)
