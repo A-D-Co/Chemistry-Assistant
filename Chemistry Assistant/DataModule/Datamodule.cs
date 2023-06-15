@@ -57,7 +57,6 @@ namespace Chemistry_Assistant
             FinalizeInstance();
             GC.SuppressFinalize(this);
         }
-
         private void FinalizeInstance()
         {
             /*

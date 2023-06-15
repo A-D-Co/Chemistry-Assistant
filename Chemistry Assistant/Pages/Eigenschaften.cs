@@ -24,20 +24,14 @@ namespace Chemistry_Assistant
 
 
         public DataSet data = new DataSet();
-
-
-
         private void Eigenschaften_Load(int elementId)
         {
             //-1 weil die Rows beginnen mir 0 
             elementId -= 1;
-           
-
             //Auf dataset refrenciert die im datamoul um table herzustellen
             data = MainPage.DM.ds;
 
             this.Text = data.Tables[0].Rows[elementId][3].ToString(); ;
-
             if (data.Tables[0].Rows.Count > 0)
             {
                 _lbl_Ordnungzahl.Text = data.Tables[0].Rows[elementId][1].ToString();
@@ -55,16 +49,8 @@ namespace Chemistry_Assistant
                 TB_Pauling.Text = data.Tables[0].Rows[elementId][13].ToString();
                 TB_Allred.Text= data.Tables[0].Rows[elementId][14].ToString();
                 TB_Pearson.Text = data.Tables[0].Rows[elementId][15].ToString();
-
-
             }
-
-
-
-
         }
-
-
     }
 
 }

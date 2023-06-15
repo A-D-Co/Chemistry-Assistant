@@ -57,8 +57,6 @@ namespace Chemistry_Assistant.Pages
         public RectangleF wasser;
         public void OnpaintSauerstoff(Graphics e)
         {
-
-
             sauerstoff.X = location.X;
             sauerstoff.Y = location.Y;
             //e.FillEllipse(new SolidBrush(Color.Red), sauerstoff);

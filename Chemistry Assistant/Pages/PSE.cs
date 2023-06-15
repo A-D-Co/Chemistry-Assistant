@@ -25,6 +25,7 @@ namespace Chemistry_Assistant
             EigenschaftenWindow(1);
 
         }
+
         private void _PT_Helium_Click(object sender, EventArgs e)
         {
             EigenschaftenWindow(2);

@@ -204,7 +204,7 @@
             this.BT_Rechnen.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(27)))), ((int)(((byte)(42)))));
             this.BT_Rechnen.Size = new System.Drawing.Size(121, 41);
             this.BT_Rechnen.TabIndex = 25;
-            this.BT_Rechnen.Text = "Apps";
+            this.BT_Rechnen.Text = "Rechnen";
             this.BT_Rechnen.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(27)))), ((int)(((byte)(42)))));
             this.BT_Rechnen.UseVisualStyleBackColor = true;
             this.BT_Rechnen.Click += new System.EventHandler(this.BT_Rechnen_Click);

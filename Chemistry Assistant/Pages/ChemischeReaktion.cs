@@ -50,7 +50,6 @@ namespace Chemistry_Assistant.Pages
             // Überprüfe auf Überlappungen zwischen Sauerstoff- und Wasserstoff-Molekülen
             bool hasOverlap = false;
             List<Move> itemsToRemove = new List<Move>();
-
             foreach (Move sauerstoffItem in SauerstoffItems)
             {
                 foreach (Move wasserstoffItem in WasserstoffItems)
@@ -90,7 +89,6 @@ namespace Chemistry_Assistant.Pages
             {
                 _lbl_Vollstaedige.Visible = true;
             }
-
         }
 
         // Lösche das letzte Element aus der gegebenen Liste von Molekülen
